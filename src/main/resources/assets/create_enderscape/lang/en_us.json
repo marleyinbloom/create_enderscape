@@ -1,0 +1,13 @@
+{
+  "itemGroup.create_enderscape": "Example Mod Tab",
+  "block.create_enderscape.example_block": "Example Block",
+  "item.create_enderscape.example_item": "Example Item",
+
+  "create_enderscape.configuration.title": "Create: Catch My Drift Configs",
+  "create_enderscape.configuration.section.create_enderscape.common.toml": "Create: Catch My Drift Configs",
+  "create_enderscape.configuration.section.create_enderscape.common.toml.title": "Create: Catch My Drift Configs",
+  "create_enderscape.configuration.items": "Item List",
+  "create_enderscape.configuration.logDirtBlock": "Log Dirt Block",
+  "create_enderscape.configuration.magicNumberIntroduction": "Magic Number Text",
+  "create_enderscape.configuration.magicNumber": "Magic Number"
+}

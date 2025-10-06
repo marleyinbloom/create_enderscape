@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "create_enderscape:crushed_raw_shadoline"
+    }
+  ],
+  "results": [
+    {
+      "count": 9,
+      "id": "create_enderscape:shadoline_nugget"
+    },
+    {
+      "chance": 0.25,
+      "id": "enderscape:rubble_chitin"
+    }
+  ]
+}

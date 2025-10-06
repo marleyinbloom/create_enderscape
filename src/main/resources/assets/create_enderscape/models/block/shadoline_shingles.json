@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "create_enderscape:block/shadoline_roof_top",
+    "side": "create_enderscape:block/shadoline_shingles"
+  }
+}

@@ -1,32 +1,18 @@
 package garden.inbloom.create_enderscape.block;
 
-import java.util.function.Supplier;
-
+import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import com.simibubi.create.foundation.data.SharedProperties;
-import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.entry.BlockEntry;
-import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import com.simibubi.create.AllSpriteShifts;
-import com.simibubi.create.content.decoration.RoofBlockCTBehaviour;
-import com.simibubi.create.content.decoration.encasing.CasingBlock;
-import com.simibubi.create.foundation.block.connected.AllCTTypes;
 
 import garden.inbloom.create_enderscape.CreateEnderscape;
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
 import garden.inbloom.create_enderscape.block.connected.behaviors.ShadolineRoofCTBehavior;
-import garden.inbloom.create_enderscape.item.CrEsItems;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
-import net.bunten.enderscape.registry.EnderscapeNoteBlockInstruments;
 import net.bunten.enderscape.registry.EnderscapeSoundTypes;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CrEsBlocks {

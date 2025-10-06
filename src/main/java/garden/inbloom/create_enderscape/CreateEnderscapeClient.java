@@ -1,7 +1,5 @@
 package garden.inbloom.create_enderscape;
 
-import com.simibubi.create.CreateClient;
-
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;

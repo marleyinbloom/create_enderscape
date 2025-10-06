@@ -7,7 +7,6 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTType;
 import com.simibubi.create.foundation.block.connected.ConnectedTextureBehaviour;
 
-import garden.inbloom.create_enderscape.CreateEnderscape;
 import garden.inbloom.create_enderscape.block.CrEsBlocks;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -17,7 +16,6 @@ import net.minecraft.core.Direction.Axis;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Half;

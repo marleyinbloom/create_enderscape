@@ -15,7 +15,7 @@ import com.simibubi.create.foundation.block.connected.AllCTTypes;
 
 import garden.inbloom.create_enderscape.CreateEnderscape;
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
-import garden.inbloom.create_enderscape.block.connected.ShadolineRoofCTBehavior;
+import garden.inbloom.create_enderscape.block.connected.behaviors.ShadolineRoofCTBehavior;
 import garden.inbloom.create_enderscape.item.CrEsItems;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.bunten.enderscape.registry.EnderscapeNoteBlockInstruments;

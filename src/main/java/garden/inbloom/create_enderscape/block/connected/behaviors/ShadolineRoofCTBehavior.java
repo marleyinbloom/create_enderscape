@@ -1,4 +1,4 @@
-package garden.inbloom.create_enderscape.block.connected;
+package garden.inbloom.create_enderscape.block.connected.behaviors;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_enderscape:item/crushed_raw_shadoline"
+  }
+}

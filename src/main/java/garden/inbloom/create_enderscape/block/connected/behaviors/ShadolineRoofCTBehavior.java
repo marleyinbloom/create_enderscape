@@ -7,7 +7,8 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTType;
 import com.simibubi.create.foundation.block.connected.ConnectedTextureBehaviour;
 
-import garden.inbloom.create_enderscape.block.CrEsBlocks;
+import garden.inbloom.create_enderscape.register.CrEsBlocks;
+import garden.inbloom.create_enderscape.register.CrEsTags.CrEsBlockTags;
 import net.createmod.catnip.data.Iterate;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
@@ -113,8 +114,8 @@ public class ShadolineRoofCTBehavior extends ConnectedTextureBehaviour.Base {
 	protected boolean connects(BlockAndTintGetter reader, BlockPos pos, BlockState state, BlockState other) {
 		double top = state.getCollisionShape(reader, pos)
 			.max(Axis.Y);
-		boolean isShadolineRoof = (other.is(CrEsBlocks.SHADOLINE_SHINGLES.get()) || other.is(CrEsBlocks.SHADOLINE_TILES));
-		double topOther = !isShadolineRoof ? 0
+		boolean canConnect = (other.is(CrEsBlockTags.ROOF_BLOCKS.tag) || other.is(CrEsBlockTags.CONNECTS_TO_ROOF_BLOCKS_SHADOLINE.tag));
+		double topOther = !canConnect ? 0
 			: other.getCollisionShape(reader, pos)
 				.max(Axis.Y);
 		//CreateEnderscape.LOGGER.debug("top=" + top + " topOther=" + topOther + " return=" + Mth.equal(top, topOther));

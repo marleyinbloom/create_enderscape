@@ -7,7 +7,6 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
 import com.simibubi.create.foundation.block.connected.CTType;
 
 import garden.inbloom.create_enderscape.CreateEnderscape;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 
 public class CrEsSpriteShifts extends AllSpriteShifts {
@@ -25,9 +24,8 @@ public class CrEsSpriteShifts extends AllSpriteShifts {
 	}
 	
 	private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
-		return CTSpriteShifter.getCT(type, 
-				ResourceLocation.fromNamespaceAndPath(CreateEnderscape.MODID, "block/" + blockTextureName),
-				ResourceLocation.fromNamespaceAndPath(CreateEnderscape.MODID, "block/" + connectedTextureName + "_connected"));
+		return CTSpriteShifter.getCT(type, CreateEnderscape.asResource("block/" + blockTextureName),
+				CreateEnderscape.asResource("block/" + connectedTextureName + "_connected"));
 	}
 	
 	private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName) {

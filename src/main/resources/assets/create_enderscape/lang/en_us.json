@@ -1,25 +1,8 @@
 {
   "itemGroup.create_enderscape": "Create: Catch My Drift",
-  
-  "item.create_enderscape.crushed_raw_shadoline": "Crushed Raw Shadoline",
-  "item.create_enderscape.shadoline_nugget": "Shadoline Nugget",
-  "item.create_enderscape.dusk_ingot": "Dusk Ingot",
-  
-  "block.create_enderscape.test_block": "Test Block",
-  "block.create_enderscape.shadoline_shingles": "Shadoline Shingles",
-  "block.create_enderscape.shadoline_tiles": "Shadoline Tiles",
-  "block.create_enderscape.dusk_casing": "Dusk Casing",
-
+ 
   "advancement.create_enderscape.dusk_ingot": "Organic Alloys",
   "advancement.create_enderscape.dusk_ingot.desc": "Create Dusk Ingots by crafting or mixing Shadoline Ingots and Popped Chorus Fruit found beyond the End",
   "advancement.create_enderscape.dusk_casing": "The Dusk Age",
-  "advancement.create_enderscape.dusk_casing.desc": "Apply Dusk Ingots to stripped wood, creating a casing that can harness the void itself",
-
-  "create_enderscape.configuration.title": "create_enderscape: Catch My Drift Configs",
-  "create_enderscape.configuration.section.create_enderscape.common.toml": "create_enderscape: Catch My Drift Configs",
-  "create_enderscape.configuration.section.create_enderscape.common.toml.title": "create_enderscape: Catch My Drift Configs",
-  "create_enderscape.configuration.items": "Item List",
-  "create_enderscape.configuration.logDirtBlock": "Log Dirt Block",
-  "create_enderscape.configuration.magicNumberIntroduction": "Magic Number Text",
-  "create_enderscape.configuration.magicNumber": "Magic Number"
+  "advancement.create_enderscape.dusk_casing.desc": "Apply Dusk Ingots to stripped wood, creating a casing that can harness the void itself"
 }

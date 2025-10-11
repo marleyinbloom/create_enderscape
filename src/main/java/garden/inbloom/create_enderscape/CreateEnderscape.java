@@ -1,14 +1,22 @@
 package garden.inbloom.create_enderscape;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
-import garden.inbloom.create_enderscape.block.CrEsBlocks;
-import garden.inbloom.create_enderscape.item.CrEsItems;
+import garden.inbloom.create_enderscape.register.CrEsBlocks;
+import garden.inbloom.create_enderscape.register.CrEsItems;
+import garden.inbloom.create_enderscape.register.CrEsRecipes;
 import net.bunten.enderscape.registry.EnderscapeCreativeModeTab;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.DataProvider;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,6 +25,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
@@ -44,9 +53,12 @@ public class CreateEnderscape {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+        modEventBus.addListener(this::gatherData);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        
+        
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
@@ -55,16 +67,6 @@ public class CreateEnderscape {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    	if (event.getTabKey() == EnderscapeCreativeModeTab.ENDERSCAPE) {
-    		event.accept(CrEsItems.SHADOLINE_NUGGET);
-    		event.accept(CrEsItems.CRUSHED_RAW_SHADOLINE);
-    		event.accept(CrEsBlocks.TEST_BLOCK);
-    		event.accept(CrEsBlocks.SHADOLINE_SHINGLES);
-    		event.accept(CrEsBlocks.SHADOLINE_TILES);
-    	}
-
-    	if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-    	}
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -72,4 +74,20 @@ public class CreateEnderscape {
     public void onServerStarting(ServerStartingEvent event) {
 
     }
+
+    public void gatherData(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        // other providers here
+        generator.addProvider(
+                event.includeServer(),
+                new CrEsRecipes(output, lookupProvider)
+        );
+    }
+    
+    public static ResourceLocation asResource(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
+	} 
 }

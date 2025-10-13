@@ -1,9 +1,7 @@
 package garden.inbloom.create_enderscape.register;
 
 import static garden.inbloom.create_enderscape.register.CrEsTags.NameSpace.COMMON;
-import static garden.inbloom.create_enderscape.register.CrEsTags.NameSpace.VANILLA;
 import static garden.inbloom.create_enderscape.register.CrEsTags.NameSpace.CREATE;
-import static garden.inbloom.create_enderscape.register.CrEsTags.NameSpace.ENDERSCAPE;
 import static garden.inbloom.create_enderscape.register.CrEsTags.NameSpace.MOD;
 
 import javax.annotation.Nullable;
@@ -70,15 +68,9 @@ public class CrEsTags {
 		CrEsBlockTags(NameSpace namespace, @Nullable String pathOverride) {
 			this.tag = TagKey.create(Registries.BLOCK, namespace.id(this, pathOverride));
 		}
-
-		@SuppressWarnings("deprecation")
-		public boolean matches(Block block) {
-			return block.builtInRegistryHolder()
-				.is(tag);
-		}
 		
 		public boolean matches(ItemStack stack) {
-			return stack != null && stack.getItem() instanceof BlockItem blockItem && matches(blockItem.getBlock());
+			return stack != null && stack.getItem() instanceof BlockItem blockItem && matches(blockItem.getBlock().defaultBlockState());
 		}
 
 		public boolean matches(BlockState state) {
@@ -105,9 +97,8 @@ public class CrEsTags {
 			this.tag = TagKey.create(Registries.FLUID, namespace.id(this, pathOverride));
 		}
 
-		@SuppressWarnings("deprecation")
 		public boolean matches(Fluid fluid) {
-			return fluid.is(tag);
+			return fluid.defaultFluidState().is(tag);
 		}
 
 		public boolean matches(FluidState state) {

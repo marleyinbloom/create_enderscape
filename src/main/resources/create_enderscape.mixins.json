@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "garden.inbloom.create_enderscape.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+  	"ImprovedCopperRoofBlockCTBehaviour"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

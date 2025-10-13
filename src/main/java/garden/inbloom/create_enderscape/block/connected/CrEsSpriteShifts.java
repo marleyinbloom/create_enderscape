@@ -16,11 +16,18 @@ public class CrEsSpriteShifts extends AllSpriteShifts {
 		return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
 	}
 	
-	public static final CTSpriteShiftEntry SHADOLINE_SHINGLES = roof("shadoline_roof_top", "shadoline_shingles_top");
-	public static final CTSpriteShiftEntry SHADOLINE_TILES = roof("shadoline_roof_top", "shadoline_tiles_top");
+	public static final CTSpriteShiftEntry SHADOLINE_SHINGLES = roof("shadoline_roof_top", "shadoline_shingles_top"),
+		SHADOLINE_TILES = roof("shadoline_roof_top", "shadoline_tiles_top");
 	
-	private static CTSpriteShiftEntry roof(String roof_top_name,String top_name) {
+	private static CTSpriteShiftEntry roof(String roof_top_name, String top_name) {
 		return getCT(AllCTTypes.ROOF, roof_top_name, top_name);
+	}
+	
+	public static final CTSpriteShiftEntry DUSK_SCAFFOLD = horizontal("scaffold/dusk_scaffold"),
+			DUSK_SCAFFOLD_INSIDE = horizontal("scaffold/dusk_scaffold_inside");
+	
+	private static CTSpriteShiftEntry horizontal(String name) {
+		return getCT(AllCTTypes.HORIZONTAL, name);
 	}
 	
 	private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {

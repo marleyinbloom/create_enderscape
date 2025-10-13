@@ -11,13 +11,11 @@ import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
 import garden.inbloom.create_enderscape.register.CrEsBlocks;
 import garden.inbloom.create_enderscape.register.CrEsItems;
 import garden.inbloom.create_enderscape.register.CrEsRecipes;
-import net.bunten.enderscape.registry.EnderscapeCreativeModeTab;
+import garden.inbloom.create_enderscape.register.CrEsTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -47,7 +45,7 @@ public class CreateEnderscape {
         
         // Register items
         CrEsSpriteShifts.register(modEventBus);
-        CrEsBlocks.register(modEventBus);
+        CrEsBlocks.register();
         CrEsItems.register(modEventBus);
         REGISTRATE.registerEventListeners(modEventBus);
 
@@ -79,11 +77,16 @@ public class CreateEnderscape {
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+        CrEsTagProvider tagProv = new CrEsTagProvider();
 
         // other providers here
         generator.addProvider(
                 event.includeServer(),
                 new CrEsRecipes(output, lookupProvider)
+        );
+        generator.addProvider(
+                event.includeServer(),
+                tagProv.new CrEsBlockTagProvider(output, lookupProvider, MODID, null)
         );
     }
     

@@ -1,5 +1,12 @@
 {
   "itemGroup.create_enderscape": "Create: Catch My Drift",
+  
+  "tag.block.create.connects_to_roof_blocks": "Connects to Roof Blocks",
+  "tag.block.create.connects_to_roof_blocks/copper": "Connects to Copper Roof Blocks",
+  "tag.block.create.connects_to_roof_blocks/shadoline": "Connects to Shadoline Roof Blocks",
+  "tag.block.create.roof_blocks": "Roof Blocks",
+  "tag.block.create.roof_blocks/copper": "Copper Roof Blocks",
+  "tag.block.create.roof_blocks/shadoline": "Shadoline Roof Blocks",
  
   "advancement.create_enderscape.dusk_ingot": "Organic Alloys",
   "advancement.create_enderscape.dusk_ingot.desc": "Create Dusk Ingots by crafting or mixing Shadoline Ingots and Popped Chorus Fruit found beyond the End",

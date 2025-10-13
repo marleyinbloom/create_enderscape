@@ -1,11 +1,16 @@
 package garden.inbloom.create_enderscape.register;
 
+import com.simibubi.create.content.decoration.MetalLadderBlock;
+import com.simibubi.create.content.decoration.MetalScaffoldingBlock;
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 import garden.inbloom.create_enderscape.CreateEnderscape;
+import garden.inbloom.create_enderscape.block.CasingDecoGen.CasingBarsGen;
+import garden.inbloom.create_enderscape.block.CrEsBuilderTransformers;
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
 import garden.inbloom.create_enderscape.block.connected.behaviors.ShadolineRoofCTBehavior;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
@@ -13,8 +18,9 @@ import net.bunten.enderscape.registry.EnderscapeSoundTypes;
 import net.bunten.enderscape.registry.tag.EnderscapeBlockTags;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.neoforged.bus.api.IEventBus;
+import net.minecraft.world.level.material.MapColor;
 
 public class CrEsBlocks {
 	public static final CreateRegistrate REGISTRATE = CreateEnderscape.REGISTRATE;
@@ -65,10 +71,23 @@ public class CrEsBlocks {
 			.tag(BlockTags.MINEABLE_WITH_AXE).tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.lang("Repulsive Magnia Coupler")
 		    .item().build().register();
-
-	static {
-		CreateEnderscape.LOGGER.info("Registered Blocks!");
-	}
 	
-	public static void register(IEventBus eventBus) {}
+	public static final BlockEntry<IronBarsBlock> DUSK_BARS = CasingBarsGen.createBars("dusk", true,
+			() -> DataIngredient.items(CrEsItems.DUSK_INGOT.get()), MapColor.COLOR_BLACK, EnderscapeSoundTypes.PURPUR);
+	
+	public static final BlockEntry<MetalScaffoldingBlock> DUSK_SCAFFOLDING = REGISTRATE.block("dusk_scaffolding", MetalScaffoldingBlock::new)
+			.transform(CrEsBuilderTransformers.scaffold("dusk", () -> DataIngredient.items(CrEsItems.DUSK_INGOT.get()),
+				MapColor.COLOR_BLACK, EnderscapeSoundTypes.PURPUR, CrEsSpriteShifts.DUSK_SCAFFOLD,
+				CrEsSpriteShifts.DUSK_SCAFFOLD_INSIDE, CrEsSpriteShifts.DUSK_CASING))
+			.register();
+	
+	public static final BlockEntry<MetalLadderBlock> ANDESITE_LADDER = REGISTRATE.block("dusk_ladder", MetalLadderBlock::new)
+			.transform(CrEsBuilderTransformers.ladder("dusk", () -> DataIngredient.items(CrEsItems.DUSK_INGOT.get()),
+				MapColor.COLOR_BLACK, EnderscapeSoundTypes.PURPUR))
+			.register();
+	
+	
+	public static void register() {
+		CreateEnderscape.LOGGER.info("Registering Blocks!");
+	}
 }

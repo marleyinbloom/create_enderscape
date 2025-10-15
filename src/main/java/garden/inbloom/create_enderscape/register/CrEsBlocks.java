@@ -1,18 +1,15 @@
 package garden.inbloom.create_enderscape.register;
 
-import static garden.inbloom.create_enderscape.block.CrEsWindowGen.woodenWindowBlock;
-
 import com.simibubi.create.content.decoration.MetalLadderBlock;
 import com.simibubi.create.content.decoration.MetalScaffoldingBlock;
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
-import com.simibubi.create.content.decoration.palettes.WindowBlock;
 import com.simibubi.create.foundation.block.connected.HorizontalCTBehaviour;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
-import garden.inbloom.create_enderscape.CreateEnderscape;
+import garden.inbloom.create_enderscape.Drift;
 import garden.inbloom.create_enderscape.block.CasingDecoGen.CasingBarsGen;
 import garden.inbloom.create_enderscape.block.CrEsBuilderTransformers;
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
@@ -30,12 +27,12 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 public class CrEsBlocks {
-	public static final CreateRegistrate REGISTRATE = CreateEnderscape.REGISTRATE;
+	public static final CreateRegistrate REGISTRATE = Drift.REGISTRATE;
 	
 	public static final BlockEntry<Block> SHADOLINE_SHINGLES = REGISTRATE.block("shadoline_shingles", 
 		    properties -> new Block(BlockBehaviour.Properties.ofFullCopy(EnderscapeBlocks.CUT_SHADOLINE.get())))
 			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeColumn("shadoline_shingles", 
-					CreateEnderscape.asResource("block/shadoline_shingles"), CreateEnderscape.asResource("block/shadoline_roof_top"))))
+					Drift.asResource("block/shadoline_shingles"), Drift.asResource("block/shadoline_roof_top"))))
 			.onRegister(CreateRegistrate.connectedTextures(() -> new ShadolineRoofCTBehavior(CrEsSpriteShifts.SHADOLINE_SHINGLES)))
 			.tag(CrEsTags.CrEsBlockTags.ROOF_BLOCKS.tag).tag(CrEsTags.CrEsBlockTags.ROOF_BLOCKS_SHADOLINE.tag)
 				.tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL).tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
@@ -47,7 +44,7 @@ public class CrEsBlocks {
 	public static final BlockEntry<Block> SHADOLINE_TILES = REGISTRATE.block("shadoline_tiles", 
 		    properties -> new Block(BlockBehaviour.Properties.ofFullCopy(EnderscapeBlocks.CUT_SHADOLINE.get())))
 			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeColumn("shadoline_tiles", 
-					CreateEnderscape.asResource("block/shadoline_tiles"), CreateEnderscape.asResource("block/shadoline_roof_top"))))
+					Drift.asResource("block/shadoline_tiles"), Drift.asResource("block/shadoline_roof_top"))))
 			.onRegister(CreateRegistrate.connectedTextures(() -> new ShadolineRoofCTBehavior(CrEsSpriteShifts.SHADOLINE_TILES)))
 			.tag(CrEsTags.CrEsBlockTags.ROOF_BLOCKS.tag).tag(CrEsTags.CrEsBlockTags.ROOF_BLOCKS_SHADOLINE.tag)
 				.tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL).tag(BlockTags.INCORRECT_FOR_GOLD_TOOL)
@@ -66,7 +63,7 @@ public class CrEsBlocks {
 	public static final BlockEntry<Block> ALLURING_MAGNIA_COUPLER = REGISTRATE.block("alluring_magnia_coupler", 
 		    properties -> new Block(BlockBehaviour.Properties.of()
 		    		.requiresCorrectToolForDrops().noOcclusion()))
-			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().getExistingFile(CreateEnderscape.asResource("block/alluring_magnia_coupler"))))
+			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().getExistingFile(Drift.asResource("block/alluring_magnia_coupler"))))
 			.tag(BlockTags.MINEABLE_WITH_AXE).tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.lang("Alluring Magnia Coupler")
 		    .item().build().register();
@@ -74,7 +71,7 @@ public class CrEsBlocks {
 	public static final BlockEntry<Block> REPULSIVE_MAGNIA_COUPLER = REGISTRATE.block("repulsive_magnia_coupler", 
 		    properties -> new Block(BlockBehaviour.Properties.of()
 		    		.requiresCorrectToolForDrops().noOcclusion()))
-			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().getExistingFile(CreateEnderscape.asResource("block/repulsive_magnia_coupler"))))
+			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().getExistingFile(Drift.asResource("block/repulsive_magnia_coupler"))))
 			.tag(BlockTags.MINEABLE_WITH_AXE).tag(BlockTags.MINEABLE_WITH_PICKAXE)
 			.lang("Repulsive Magnia Coupler")
 		    .item().build().register();
@@ -96,7 +93,7 @@ public class CrEsBlocks {
 	public static final BlockEntry<Block> CELESTIAL_WINDOW = REGISTRATE.block("celestial_window", 
 		    properties -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)))
 			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeColumn("celestial_window", 
-					CreateEnderscape.asResource("block/windows/celestial_window"), Enderscape.id("block/celestial_planks"))))
+					Drift.asResource("block/windows/celestial_window"), Enderscape.id("block/celestial_planks"))))
 			.onRegister(CreateRegistrate.connectedTextures(() -> new HorizontalCTBehaviour(CrEsSpriteShifts.getWoodenWindow(EnderscapeBlocks.CELESTIAL_WOOD_TYPE))))
 			.addLayer(() -> RenderType::cutoutMipped)
 			.lang("Celestial Window")
@@ -104,6 +101,6 @@ public class CrEsBlocks {
 	
 	
 	public static void register() {
-		CreateEnderscape.LOGGER.info("Registering Blocks!");
+		Drift.LOGGER.info("Registering Blocks!");
 	}
 }

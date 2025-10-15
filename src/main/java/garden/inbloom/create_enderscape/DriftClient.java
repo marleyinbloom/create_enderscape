@@ -11,11 +11,11 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
-@Mod(value = CreateEnderscape.MODID, dist = Dist.CLIENT)
+@Mod(value = Drift.MODID, dist = Dist.CLIENT)
 // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-@EventBusSubscriber(modid = CreateEnderscape.MODID, value = Dist.CLIENT)
-public class CreateEnderscapeClient {
-    public CreateEnderscapeClient(ModContainer container) {
+@EventBusSubscriber(modid = Drift.MODID, value = Dist.CLIENT)
+public class DriftClient {
+    public DriftClient(ModContainer container) {
         // Allows NeoForge to create a config screen for this mod's configs.
         // The config screen is accessed by going to the Mods screen > clicking on your mod > clicking on config.
         // Do not forget to add translations for your config options to the en_us.json file.
@@ -25,7 +25,7 @@ public class CreateEnderscapeClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        CreateEnderscape.LOGGER.info("HELLO FROM CLIENT SETUP");
-        CreateEnderscape.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        Drift.LOGGER.info("HELLO FROM CLIENT SETUP");
+        Drift.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }

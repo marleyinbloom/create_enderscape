@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 import com.simibubi.create.Create;
 
-import garden.inbloom.create_enderscape.CreateEnderscape;
+import garden.inbloom.create_enderscape.Drift;
 import net.bunten.enderscape.Enderscape;
 import net.createmod.catnip.lang.Lang;
 import net.minecraft.core.registries.Registries;
@@ -23,7 +23,7 @@ import net.minecraft.world.level.material.FluidState;
 
 public class CrEsTags {
 	public enum NameSpace {
-		MOD(CreateEnderscape.MODID),
+		MOD(Drift.MODID),
 		CREATE(Create.ID),
 		ENDERSCAPE(Enderscape.MOD_ID),
 		VANILLA("minecraft"),

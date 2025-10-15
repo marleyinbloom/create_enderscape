@@ -8,7 +8,7 @@ import com.simibubi.create.foundation.data.TagGen;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
-import garden.inbloom.create_enderscape.CreateEnderscape;
+import garden.inbloom.create_enderscape.Drift;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.resources.ResourceLocation;
@@ -23,7 +23,7 @@ public class CasingDecoGen {
 		
 		public static BlockEntry<IronBarsBlock> createBars(String name, boolean specialEdge, 
 			Supplier<DataIngredient> ingredient, MapColor color, SoundType soundType) {
-			return CreateEnderscape.REGISTRATE.block(name + "_bars", IronBarsBlock::new)
+			return Drift.REGISTRATE.block(name + "_bars", IronBarsBlock::new)
 				.addLayer(() -> RenderType::cutoutMipped)
 				.initialProperties(() -> Blocks.IRON_BARS)
 				.properties(p -> p.sound(soundType)

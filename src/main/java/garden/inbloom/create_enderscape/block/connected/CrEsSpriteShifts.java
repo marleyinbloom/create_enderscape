@@ -10,7 +10,7 @@ import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
 import com.simibubi.create.foundation.block.connected.CTType;
 
-import garden.inbloom.create_enderscape.CreateEnderscape;
+import garden.inbloom.create_enderscape.Drift;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
@@ -43,8 +43,8 @@ public class CrEsSpriteShifts extends AllSpriteShifts {
 	}
 	
 	private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName, String connectedTextureName) {
-		return CTSpriteShifter.getCT(type, CreateEnderscape.asResource("block/" + blockTextureName),
-				CreateEnderscape.asResource("block/" + connectedTextureName + "_connected"));
+		return CTSpriteShifter.getCT(type, Drift.asResource("block/" + blockTextureName),
+				Drift.asResource("block/" + connectedTextureName + "_connected"));
 	}
 	
 	private static CTSpriteShiftEntry getCT(CTType type, String blockTextureName) {
@@ -53,7 +53,7 @@ public class CrEsSpriteShifts extends AllSpriteShifts {
 	
 
 	static {
-		CreateEnderscape.LOGGER.info("Registered SpriteShifts!");
+		Drift.LOGGER.info("Registered SpriteShifts!");
 	}
 
 	public static void register(IEventBus eventBus) {}

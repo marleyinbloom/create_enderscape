@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "create_enderscape:block/evil_dusk_purpur_block",
+    "side": "create_enderscape:block/windows/celestial_window"
+  }
+}

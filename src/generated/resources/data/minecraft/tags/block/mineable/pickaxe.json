@@ -7,7 +7,6 @@
     "create_enderscape:repulsive_magnia_coupler",
     "create_enderscape:dusk_bars",
     "create_enderscape:dusk_scaffolding",
-    "create_enderscape:dusk_ladder",
-    "create_enderscape:dusk_door"
+    "create_enderscape:dusk_ladder"
   ]
 }

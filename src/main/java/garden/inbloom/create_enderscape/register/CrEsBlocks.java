@@ -1,8 +1,12 @@
 package garden.inbloom.create_enderscape.register;
 
+import static garden.inbloom.create_enderscape.block.CrEsWindowGen.woodenWindowBlock;
+
 import com.simibubi.create.content.decoration.MetalLadderBlock;
 import com.simibubi.create.content.decoration.MetalScaffoldingBlock;
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
+import com.simibubi.create.content.decoration.palettes.WindowBlock;
+import com.simibubi.create.foundation.block.connected.HorizontalCTBehaviour;
 import com.simibubi.create.foundation.data.BuilderTransformers;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.DataIngredient;
@@ -13,11 +17,14 @@ import garden.inbloom.create_enderscape.block.CasingDecoGen.CasingBarsGen;
 import garden.inbloom.create_enderscape.block.CrEsBuilderTransformers;
 import garden.inbloom.create_enderscape.block.connected.CrEsSpriteShifts;
 import garden.inbloom.create_enderscape.block.connected.behaviors.ShadolineRoofCTBehavior;
+import net.bunten.enderscape.Enderscape;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.bunten.enderscape.registry.EnderscapeSoundTypes;
 import net.bunten.enderscape.registry.tag.EnderscapeBlockTags;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -81,10 +88,19 @@ public class CrEsBlocks {
 				CrEsSpriteShifts.DUSK_SCAFFOLD_INSIDE, CrEsSpriteShifts.DUSK_CASING))
 			.register();
 	
-	public static final BlockEntry<MetalLadderBlock> ANDESITE_LADDER = REGISTRATE.block("dusk_ladder", MetalLadderBlock::new)
+	public static final BlockEntry<MetalLadderBlock> DUSK_LADDER = REGISTRATE.block("dusk_ladder", MetalLadderBlock::new)
 			.transform(CrEsBuilderTransformers.ladder("dusk", () -> DataIngredient.items(CrEsItems.DUSK_INGOT.get()),
 				MapColor.COLOR_BLACK, EnderscapeSoundTypes.PURPUR))
 			.register();
+	
+	public static final BlockEntry<Block> CELESTIAL_WINDOW = REGISTRATE.block("celestial_window", 
+		    properties -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)))
+			.blockstate((ctx, prov) -> prov.simpleBlock(ctx.get(), prov.models().cubeColumn("celestial_window", 
+					CreateEnderscape.asResource("block/windows/celestial_window"), Enderscape.id("block/celestial_planks"))))
+			.onRegister(CreateRegistrate.connectedTextures(() -> new HorizontalCTBehaviour(CrEsSpriteShifts.getWoodenWindow(EnderscapeBlocks.CELESTIAL_WOOD_TYPE))))
+			.addLayer(() -> RenderType::cutoutMipped)
+			.lang("Celestial Window")
+		    .item().build().register();	
 	
 	
 	public static void register() {

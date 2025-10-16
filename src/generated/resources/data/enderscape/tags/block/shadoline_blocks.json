@@ -1,7 +1,6 @@
 {
   "values": [
     "create_enderscape:shadoline_shingles",
-    "create_enderscape:shadoline_tiles",
-    "create_enderscape:celestial_window"
+    "create_enderscape:shadoline_tiles"
   ]
 }

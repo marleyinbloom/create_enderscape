@@ -1,0 +1,32 @@
+package garden.inbloom.create_enderscape.to_delete.block;
+
+import java.util.function.Supplier;
+
+import com.simibubi.create.content.decoration.palettes.WindowBlock;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.data.WindowGen;
+import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.nullness.NonNullFunction;
+
+import garden.inbloom.create_enderscape.Drift;
+import garden.inbloom.create_enderscape.block.connected.DriftSpriteShifts;
+import net.bunten.enderscape.Enderscape;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.WoodType;
+
+public class CrEsWindowGen extends WindowGen {
+	public static final CreateRegistrate REGISTRATE = Drift.REGISTRATE;
+	
+	public static BlockEntry<WindowBlock> woodenWindowBlock(WoodType woodType, Block planksBlock,
+			Supplier<Supplier<RenderType>> renderType, boolean translucent) {
+		String woodName = woodType.name();
+		String name = woodName + "_window";
+		NonNullFunction<String, ResourceLocation> end_texture =
+			$ -> Enderscape.id("block/" + woodName + "_planks");
+		NonNullFunction<String, ResourceLocation> side_texture = n -> Drift.asResource("block/" + n);
+		return windowBlock(name, () -> planksBlock, () -> DriftSpriteShifts.getWoodenWindow(woodType), renderType,
+			translucent, end_texture, side_texture, planksBlock::defaultMapColor).register();
+	}
+}

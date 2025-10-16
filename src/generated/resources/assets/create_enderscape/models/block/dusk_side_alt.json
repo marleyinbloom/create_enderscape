@@ -1,8 +1,0 @@
-{
-  "parent": "create_enderscape:block/bars/side_alt",
-  "textures": {
-    "bars": "create_enderscape:block/bars/dusk_bars",
-    "edge": "create_enderscape:block/bars/dusk_bars_edge",
-    "particle": "create_enderscape:block/bars/dusk_bars"
-  }
-}

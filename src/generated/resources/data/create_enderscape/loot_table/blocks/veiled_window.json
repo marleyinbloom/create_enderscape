@@ -23,11 +23,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "create_enderscape:celestial_window"
+          "name": "create_enderscape:veiled_window"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "create_enderscape:blocks/celestial_window"
+  "random_sequence": "create_enderscape:blocks/veiled_window"
 }

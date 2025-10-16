@@ -1,8 +1,0 @@
-{
-  "parent": "create_enderscape:block/ladder",
-  "textures": {
-    "0": "create_enderscape:block/ladder_dusk_hoop",
-    "1": "create_enderscape:block/ladder_dusk",
-    "particle": "create_enderscape:block/ladder_dusk"
-  }
-}

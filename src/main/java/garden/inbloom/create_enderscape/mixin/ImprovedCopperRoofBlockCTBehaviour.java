@@ -8,7 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import com.simibubi.create.content.decoration.RoofBlockCTBehaviour;
 import com.simibubi.create.foundation.block.connected.ConnectedTextureBehaviour;
 
-import garden.inbloom.create_enderscape.register.CrEsTags.CrEsBlockTags;
+import garden.inbloom.create_enderscape.register.DriftTags.DriftBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.util.Mth;
@@ -22,7 +22,7 @@ public abstract class ImprovedCopperRoofBlockCTBehaviour extends ConnectedTextur
 	private void connects(BlockAndTintGetter reader, BlockPos pos, BlockState state, BlockState other, CallbackInfoReturnable<Boolean> callback) {
 		double top = state.getCollisionShape(reader, pos)
 			.max(Axis.Y);
-		boolean canConnect = (other.is(CrEsBlockTags.ROOF_BLOCKS.tag) || other.is(CrEsBlockTags.CONNECTS_TO_ROOF_BLOCKS_COPPER.tag));
+		boolean canConnect = (other.is(DriftBlockTags.ROOF_BLOCKS.tag) || other.is(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_COPPER.tag));
 		double topOther = !canConnect ? 0
 			: other.getCollisionShape(reader, pos)
 				.max(Axis.Y);

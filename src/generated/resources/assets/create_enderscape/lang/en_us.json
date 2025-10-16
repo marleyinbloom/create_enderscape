@@ -1,16 +1,15 @@
 {
-  "block.create_enderscape.alluring_magnia_coupler": "Alluring Magnia Coupler",
   "block.create_enderscape.celestial_window": "Celestial Window",
-  "block.create_enderscape.dusk_bars": "Dusk Bars",
   "block.create_enderscape.dusk_casing": "Dusk Casing",
-  "block.create_enderscape.dusk_ladder": "Dusk Ladder",
-  "block.create_enderscape.dusk_scaffolding": "Dusk Scaffolding",
-  "block.create_enderscape.repulsive_magnia_coupler": "Repulsive Magnia Coupler",
+  "block.create_enderscape.murublight_window": "Murublight Window",
   "block.create_enderscape.shadoline_shingles": "Shadoline Shingles",
   "block.create_enderscape.shadoline_tiles": "Shadoline Tiles",
+  "block.create_enderscape.veiled_window": "Veiled Window",
   "item.create_enderscape.crushed_raw_shadoline": "Crushed Raw Shadoline",
   "item.create_enderscape.dusk_ingot": "Dusk Ingot",
   "item.create_enderscape.magnia_control_unit": "Magnia Control Unit",
   "item.create_enderscape.shadoline_nugget": "Shadoline Nugget",
-  "item.create_enderscape.shadoline_sheet": "Shadoline Sheet"
+  "item.create_enderscape.shadoline_sheet": "Shadoline Sheet",
+  "tab.create_enderscape.deco": "Catch My Drift's Building Blocks",
+  "tab.create_enderscape.main": "Create: Catch My Drift"
 }

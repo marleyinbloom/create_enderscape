@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "enderscape:mirror"
+    }
+  ],
+  "results": [
+    {
+      "id": "enderscape:cracked_mirror"
+    }
+  ]
+}

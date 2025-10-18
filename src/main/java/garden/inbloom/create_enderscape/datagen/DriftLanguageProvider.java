@@ -19,6 +19,7 @@ public class DriftLanguageProvider extends LanguageProvider {
 		
 		blockTranslations();
 		itemTranslations();
+		advancementTranslations();
 	}
 	
 	private void miscTranslations() {
@@ -44,7 +45,19 @@ public class DriftLanguageProvider extends LanguageProvider {
 		addItem(DriftItems.SHADOLINE_NUGGET, "Shadoline Nugget");
 		addItem(DriftItems.SHADOLINE_SHEET, "Shadoline Sheet");
 		addItem(DriftItems.CRUSHED_RAW_SHADOLINE, "Crushed Raw Shadoline");
-
+	}
+	
+	private void advancementTranslations() {
+		addAdvancement("cracked_mirror", 
+			"Chaotic Evil",
+			"\"I am NOT going to put the mirror here.\"");
+	}
+	
+	private void addAdvancement(String id, String title, String desc) {
+		String titleKey = "advancement." + Drift.ID + "." + id + ".title";
+		String descKey = "advancement." + Drift.ID + "." + id + ".desc";
+		add(titleKey, title);
+		add(descKey, desc);
 	}
 
 }

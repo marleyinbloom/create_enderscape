@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "enderscape:shadoline_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "create_enderscape:shadoline_sheet"
+    }
+  ]
+}

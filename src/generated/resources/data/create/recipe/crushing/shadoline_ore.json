@@ -1,0 +1,27 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "enderscape:shadoline_ore"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "count": 2,
+      "id": "create_enderscape:crushed_raw_shadoline"
+    },
+    {
+      "chance": 0.75,
+      "id": "create_enderscape:crushed_raw_shadoline"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "id": "minecraft:end_stone"
+    }
+  ]
+}

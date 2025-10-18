@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "enderscape:alluring_magnia_sprout"
+    },
+    "B": {
+      "item": "minecraft:calcite"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "R": {
+      "item": "enderscape:repulsive_magnia_sprout"
+    },
+    "S": {
+      "tag": "c:ingots/shadoline"
+    }
+  },
+  "pattern": [
+    " E ",
+    "ABR",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_enderscape:magnia_control_unit"
+  }
+}

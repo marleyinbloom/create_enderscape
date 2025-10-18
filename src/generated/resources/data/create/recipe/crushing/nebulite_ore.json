@@ -1,0 +1,27 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "enderscape:nebulite_ore"
+    }
+  ],
+  "processing_time": 350,
+  "results": [
+    {
+      "count": 3,
+      "id": "enderscape:nebulite_shards"
+    },
+    {
+      "chance": 0.5,
+      "id": "enderscape:nebulite_shards"
+    },
+    {
+      "chance": 0.75,
+      "id": "create:experience_nugget"
+    },
+    {
+      "chance": 0.125,
+      "id": "minecraft:end_stone"
+    }
+  ]
+}

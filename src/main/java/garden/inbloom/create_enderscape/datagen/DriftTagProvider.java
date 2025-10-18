@@ -11,12 +11,15 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
+import garden.inbloom.create_enderscape.register.DriftItems;
 import garden.inbloom.create_enderscape.register.DriftTags.DriftBlockTags;
-import garden.inbloom.create_enderscape.to_delete.register.CrEsBlocks;
+import garden.inbloom.create_enderscape.register.DriftTags.DriftItemTags;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
+import net.bunten.enderscape.registry.EnderscapeItems;
 import net.bunten.enderscape.registry.tag.EnderscapeBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -132,7 +135,7 @@ public class DriftTagProvider {
 				tag(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_SHADOLINE.tag).add(block);
 			}
 			
-			tag(DriftBlockTags.ROOF_BLOCKS.tag).add(CrEsBlocks.SHADOLINE_SHINGLES.get(), CrEsBlocks.SHADOLINE_TILES.get());
+			tag(DriftBlockTags.ROOF_BLOCKS.tag).add(DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
 			CopperBlockSet shingles = AllBlocks.COPPER_SHINGLES;
 		    for (CopperBlockSet.Variant<?> variant : shingles.getVariants()) {
 		        for (boolean waxed : new boolean[]{false, true}) {
@@ -157,6 +160,42 @@ public class DriftTagProvider {
 		            }
 		        }
 		    }
+		}
+	}
+	
+	public class DriftItemTagProvider extends ItemTagsProvider {
+
+		public DriftItemTagProvider(PackOutput output, CompletableFuture<Provider> lookupProvider,
+				CompletableFuture<TagLookup<Block>> blockTags, String modid, ExistingFileHelper existingFileHelper) {
+			super(output, lookupProvider, blockTags, modid, existingFileHelper);
+		}
+
+		@Override
+		protected void addTags(Provider provider) {
+			commonItemTags();
+		}
+		
+		private void commonItemTags() {
+			tag(DriftItemTags.INGOTS_DUSK.tag).add(DriftItems.DUSK_INGOT.get());
+			tag(DriftItemTags.INGOTS_SHADOLINE.tag).add(EnderscapeItems.SHADOLINE_INGOT.get());
+			tag(DriftItemTags.INGOTS.tag).add(
+					DriftItems.DUSK_INGOT.get(), EnderscapeItems.SHADOLINE_INGOT.get());
+			tag(DriftItemTags.NUGGETS_SHADOLINE.tag).add(DriftItems.SHADOLINE_NUGGET.get());
+			tag(DriftItemTags.NUGGETS.tag).add(DriftItems.SHADOLINE_NUGGET.get());
+			tag(DriftItemTags.RAW_MATERIALS_SHADOLINE.tag).add(EnderscapeItems.RAW_SHADOLINE.get());
+			tag(DriftItemTags.RAW_MATERIALS.tag).add(EnderscapeItems.RAW_SHADOLINE.get());
+			
+			tag(DriftItemTags.STORAGE_BLOCKS_SHADOLINE.tag).add(EnderscapeBlocks.SHADOLINE_BLOCK.get().asItem());
+			tag(DriftItemTags.STORAGE_BLOCKS_RAW_SHADOLINE.tag).add(EnderscapeBlocks.RAW_SHADOLINE_BLOCK.get().asItem());
+			tag(DriftItemTags.STORAGE_BLOCKS.tag).add(
+				EnderscapeBlocks.SHADOLINE_BLOCK.get().asItem(), EnderscapeBlocks.RAW_SHADOLINE_BLOCK.get().asItem());
+			
+			tag(DriftItemTags.STRIPPED_LOGS.tag).add(
+				EnderscapeBlocks.STRIPPED_CELESTIAL_STEM.get().asItem(), EnderscapeBlocks.STRIPPED_MURUBLIGHT_STEM.get().asItem(),
+				EnderscapeBlocks.STRIPPED_VEILED_LOG.get().asItem());
+			tag(DriftItemTags.STRIPPED_WOOD.tag).add(
+				EnderscapeBlocks.STRIPPED_CELESTIAL_HYPHAE.get().asItem(), EnderscapeBlocks.STRIPPED_MURUBLIGHT_HYPHAE.get().asItem(),
+				EnderscapeBlocks.STRIPPED_VEILED_WOOD.get().asItem());
 		}
 	}
 }

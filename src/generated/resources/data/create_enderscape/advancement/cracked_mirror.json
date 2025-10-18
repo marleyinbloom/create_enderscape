@@ -1,0 +1,35 @@
+{
+  "parent": "create:mechanical_press",
+  "criteria": {
+    "has_cracked_mirror": {
+      "conditions": {
+        "items": [
+          {
+            "items": "enderscape:cracked_mirror"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.create_enderscape.cracked_mirror.desc"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "enderscape:cracked_mirror"
+    },
+    "title": {
+      "translate": "advancement.create_enderscape.cracked_mirror.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_cracked_mirror"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

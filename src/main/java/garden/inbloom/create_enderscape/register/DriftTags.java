@@ -59,7 +59,9 @@ public class DriftTags {
 		STORAGE_BLOCKS_SHADOLINE(COMMON, "storage_blocks/shadoline"),
 		STORAGE_BLOCKS_RAW_SHADOLINE(COMMON, "storage_blocks/raw_shadoline"),
 		STRIPPED_LOGS(COMMON, "stripped_logs"),
-		STRIPPED_WOOD(COMMON, "stripped_wood"),
+		STRIPPED_WOOD(COMMON, "stripped_woods"),
+		
+		GLASS_BLOCKS_COLORLESS(COMMON, "glass_blocks/colorless"),
 		;
 		
 		//region Block tag methods
@@ -99,7 +101,9 @@ public class DriftTags {
 		STORAGE_BLOCKS_SHADOLINE(COMMON, "storage_blocks/shadoline"),
 		STORAGE_BLOCKS_RAW_SHADOLINE(COMMON, "storage_blocks/raw_shadoline"),
 		STRIPPED_LOGS(COMMON, "stripped_logs"),
-		STRIPPED_WOOD(COMMON, "stripped_wood"),
+		STRIPPED_WOOD(COMMON, "stripped_woods"),
+		
+		GLASS_BLOCKS_COLORLESS(COMMON, "glass_blocks/colorless"),
 		;
 		
 		//region Block tag methods

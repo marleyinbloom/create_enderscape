@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "c:glass_blocks/colorless"
+    },
+    "M": {
+      "item": "enderscape:murublight_planks"
+    }
+  },
+  "pattern": [
+    " M ",
+    "M#M"
+  ],
+  "result": {
+    "count": 2,
+    "id": "create_enderscape:murublight_window"
+  }
+}

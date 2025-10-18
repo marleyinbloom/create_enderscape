@@ -40,7 +40,7 @@ public class Drift {
         DriftCreativeTabs.register(modEventBus);
         DriftBlocks.register(modEventBus);
         DriftItems.register(modEventBus);
-
+        
         modEventBus.addListener(DriftDatagen::gatherData);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us

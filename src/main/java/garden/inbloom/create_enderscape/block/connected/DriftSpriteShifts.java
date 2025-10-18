@@ -9,16 +9,18 @@ import com.simibubi.create.foundation.block.connected.CTType;
 import garden.inbloom.create_enderscape.Drift;
 import net.neoforged.bus.api.IEventBus;
 
-public class DriftSpriteShifts extends AllSpriteShifts {
+public class DriftSpriteShifts {
 	public static final CTSpriteShiftEntry DUSK_CASING = omni("dusk_casing");
 	
 	public static final CTSpriteShiftEntry DUSK_SCAFFOLD = horizontal("scaffold/dusk_scaffold"),
-			DUSK_SCAFFOLD_INSIDE = horizontal("scaffold/dusk_scaffold_inside");
+		DUSK_SCAFFOLD_INSIDE = horizontal("scaffold/dusk_scaffold_inside");
 	
 	public static final CTSpriteShiftEntry SHADOLINE_SHINGLES = roof("shadoline_roof_top", "shadoline_shingles_top"),
 		SHADOLINE_TILES = roof("shadoline_roof_top", "shadoline_tiles_top");
 
-	public static final CTSpriteShiftEntry CELESTIAL_WINDOW = vertical("windows/celestial_window");
+	public static final CTSpriteShiftEntry CELESTIAL_WINDOW = vertical("windows/celestial_window"),
+		MURUBLIGHT_WINDOW = vertical("windows/murublight_window"),
+		VEILED_WINDOW = vertical("windows/veiled_window");
 
 	private static CTSpriteShiftEntry omni(String name) {
 		return getCT(AllCTTypes.OMNIDIRECTIONAL, name);

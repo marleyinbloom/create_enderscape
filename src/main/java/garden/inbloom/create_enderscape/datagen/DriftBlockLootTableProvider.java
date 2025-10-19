@@ -21,11 +21,20 @@ public class DriftBlockLootTableProvider extends BlockLootSubProvider {
 		dropSelf(DriftBlocks.DUSK_CASING.get());
 		
 		dropSelf(DriftBlocksDeco.SHADOLINE_SHINGLES.get());
+		dropSelf(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get());
+		add(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(),
+				block -> createSlabItemTable(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get()));
 		dropSelf(DriftBlocksDeco.SHADOLINE_TILES.get());
+		dropSelf(DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+		add(DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+			block -> createSlabItemTable(DriftBlocksDeco.SHADOLINE_TILE_SLAB.get()));
 		
 		dropWhenSilkTouch(DriftBlocksDeco.CELESTIAL_WINDOW.get());
+		dropWhenSilkTouch(DriftBlocksDeco.CELESTIAL_WINDOW_PANE.get());
 		dropWhenSilkTouch(DriftBlocksDeco.MURUBLIGHT_WINDOW.get());
+		dropWhenSilkTouch(DriftBlocksDeco.MURUBLIGHT_WINDOW_PANE.get());
 		dropWhenSilkTouch(DriftBlocksDeco.VEILED_WINDOW.get());
+		dropWhenSilkTouch(DriftBlocksDeco.VEILED_WINDOW_PANE.get());
 	}
 
 	@Override

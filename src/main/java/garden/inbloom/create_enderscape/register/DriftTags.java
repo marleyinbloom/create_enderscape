@@ -46,9 +46,9 @@ public class DriftTags {
 	}
 	
 	public enum DriftBlockTags {
-		CONNECTS_TO_ROOF_BLOCKS(CREATE, "connects_to_roof_blocks"),
-		CONNECTS_TO_ROOF_BLOCKS_COPPER(CREATE, "connects_to_roof_blocks/copper"),
-		CONNECTS_TO_ROOF_BLOCKS_SHADOLINE(CREATE, "connects_to_roof_blocks/shadoline"),
+		ROOFS_CONNECT_TO(CREATE, "roofs_connects_to"),
+		ROOFS_CONNECT_TO_COPPER(CREATE, "roofs_connects_to/copper"),
+		ROOFS_CONNECT_TO_SHADOLINE(CREATE, "roofs_connects_to/shadoline"),
 		ROOF_BLOCKS(CREATE, "roof_blocks"),
 		ROOF_BLOCKS_COPPER(CREATE, "roof_blocks/copper"),
 		ROOF_BLOCKS_SHADOLINE(CREATE, "roof_blocks/shadoline"),
@@ -130,7 +130,7 @@ public class DriftTags {
 	public enum DriftFluidTags {
 		FAN_PROCESSING_CATALYSTS_CORRUPTING(MOD, "fan_processing_catalysts/corrupting"),
 
-		DRIFT_JELLY(COMMON);
+		DRIFT_JELLY();
 
 		//region Fluid tag methods
 		public final TagKey<Fluid> tag;

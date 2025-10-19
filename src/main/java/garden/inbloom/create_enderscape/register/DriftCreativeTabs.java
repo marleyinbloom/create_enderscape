@@ -34,11 +34,18 @@ public class DriftCreativeTabs {
 		.withTabsBefore(Create.asResource("palettes"))
 		.displayItems((parameters, output) -> {
 			output.accept(DriftBlocksDeco.SHADOLINE_SHINGLES);
+			output.accept(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS);
+			output.accept(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB);
 			output.accept(DriftBlocksDeco.SHADOLINE_TILES);
+			output.accept(DriftBlocksDeco.SHADOLINE_TILE_STAIRS);
+			output.accept(DriftBlocksDeco.SHADOLINE_TILE_SLAB);
 
 			output.accept(DriftBlocksDeco.CELESTIAL_WINDOW);
+			output.accept(DriftBlocksDeco.CELESTIAL_WINDOW_PANE);
 			output.accept(DriftBlocksDeco.MURUBLIGHT_WINDOW);
+			output.accept(DriftBlocksDeco.MURUBLIGHT_WINDOW_PANE);
 			output.accept(DriftBlocksDeco.VEILED_WINDOW);
+			output.accept(DriftBlocksDeco.VEILED_WINDOW_PANE);
 		}).build());
 	
 	public static void register(IEventBus event) {

@@ -2,6 +2,7 @@ package garden.inbloom.create_enderscape.register;
 
 import com.google.common.base.Supplier;
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.decoration.encasing.CasingBlock;
 
 import garden.inbloom.create_enderscape.Drift;
 import net.bunten.enderscape.registry.EnderscapeSoundTypes;
@@ -17,8 +18,8 @@ public class DriftBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Drift.ID);
 	
 	//region Block definitions
-	public static final DeferredBlock<Block> DUSK_CASING = registerBlock("dusk_casing", 
-		() -> new Block(Block.Properties.ofFullCopy(AllBlocks.ANDESITE_CASING.get())
+	public static final DeferredBlock<CasingBlock> DUSK_CASING = registerBlock("dusk_casing", 
+		() -> new CasingBlock(Block.Properties.ofFullCopy(AllBlocks.ANDESITE_CASING.get())
 		.mapColor(MapColor.COLOR_BLACK).sound(EnderscapeSoundTypes.PURPUR)));
 	//endregion
 

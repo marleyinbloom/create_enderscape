@@ -31,11 +31,18 @@ public class DriftLanguageProvider extends LanguageProvider {
 		addBlock(DriftBlocks.DUSK_CASING, "Dusk Casing");
 
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLES, "Shadoline Shingles");
+		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS, "Shadoline Shingle Stairs");
+		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB, "Shadoline Shingle Slab");
 		addBlock(DriftBlocksDeco.SHADOLINE_TILES, "Shadoline Tiles");
+		addBlock(DriftBlocksDeco.SHADOLINE_TILE_STAIRS, "Shadoline Tile Stairs");
+		addBlock(DriftBlocksDeco.SHADOLINE_TILE_SLAB, "Shadoline Tile Slab");
 
 		addBlock(DriftBlocksDeco.CELESTIAL_WINDOW, "Celestial Window");
+		addBlock(DriftBlocksDeco.CELESTIAL_WINDOW_PANE, "Celestial Window Pane");
 		addBlock(DriftBlocksDeco.MURUBLIGHT_WINDOW, "Murublight Window");
+		addBlock(DriftBlocksDeco.MURUBLIGHT_WINDOW_PANE, "Murublight Window Pane");
 		addBlock(DriftBlocksDeco.VEILED_WINDOW, "Veiled Window");
+		addBlock(DriftBlocksDeco.VEILED_WINDOW_PANE, "Veiled Window Pane");
 	}
 
 	private void itemTranslations() {

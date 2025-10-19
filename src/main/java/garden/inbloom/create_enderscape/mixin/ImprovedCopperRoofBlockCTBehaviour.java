@@ -22,7 +22,7 @@ public abstract class ImprovedCopperRoofBlockCTBehaviour extends ConnectedTextur
 	private void connects(BlockAndTintGetter reader, BlockPos pos, BlockState state, BlockState other, CallbackInfoReturnable<Boolean> callback) {
 		double top = state.getCollisionShape(reader, pos)
 			.max(Axis.Y);
-		boolean canConnect = (other.is(DriftBlockTags.ROOF_BLOCKS.tag) || other.is(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_COPPER.tag));
+		boolean canConnect = (other.is(DriftBlockTags.ROOF_BLOCKS.tag) || other.is(DriftBlockTags.ROOFS_CONNECT_TO_COPPER.tag));
 		double topOther = !canConnect ? 0
 			: other.getCollisionShape(reader, pos)
 				.max(Axis.Y);

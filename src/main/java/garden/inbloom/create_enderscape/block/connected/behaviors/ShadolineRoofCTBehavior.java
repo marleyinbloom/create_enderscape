@@ -113,7 +113,7 @@ public class ShadolineRoofCTBehavior extends ConnectedTextureBehaviour.Base {
 	protected boolean connects(BlockAndTintGetter reader, BlockPos pos, BlockState state, BlockState other) {
 		double top = state.getCollisionShape(reader, pos)
 			.max(Axis.Y);
-		boolean canConnect = (other.is(DriftBlockTags.ROOF_BLOCKS.tag) || other.is(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_SHADOLINE.tag));
+		boolean canConnect = (other.is(DriftBlockTags.ROOF_BLOCKS.tag) || other.is(DriftBlockTags.ROOFS_CONNECT_TO_SHADOLINE.tag));
 		double topOther = !canConnect ? 0
 			: other.getCollisionShape(reader, pos)
 				.max(Axis.Y);

@@ -1,6 +1,10 @@
 {
   "values": [
     "create_enderscape:shadoline_shingles",
-    "create_enderscape:shadoline_tiles"
+    "create_enderscape:shadoline_tiles",
+    "create_enderscape:shadoline_shingle_slab",
+    "create_enderscape:shadoline_tile_slab",
+    "create_enderscape:shadoline_shingle_stairs",
+    "create_enderscape:shadoline_tile_stairs"
   ]
 }

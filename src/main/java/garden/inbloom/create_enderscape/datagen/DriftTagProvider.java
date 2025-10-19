@@ -62,18 +62,28 @@ public class DriftTagProvider {
 		private void vanillaBlockTags() {
 		    tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 		    	DriftBlocks.DUSK_CASING.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 		    tag(BlockTags.MINEABLE_WITH_AXE).add(
 		    	DriftBlocks.DUSK_CASING.get());
 		    tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 		    tag(BlockTags.INCORRECT_FOR_GOLD_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 		    tag(BlockTags.NEEDS_STONE_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 		    
 		    tag(BlockTags.DRAGON_IMMUNE).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 		}
 		
 		private void enderscapeBlockTags() {
@@ -116,11 +126,11 @@ public class DriftTagProvider {
 				Blocks.WEATHERED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER_STAIRS,
 				Blocks.WAXED_CUT_COPPER_STAIRS, Blocks.WAXED_EXPOSED_CUT_COPPER_STAIRS,
 				Blocks.WAXED_WEATHERED_CUT_COPPER_STAIRS, Blocks.WAXED_OXIDIZED_CUT_COPPER_STAIRS,
-				AllBlocks.COPPER_CASING.get(), AllBlocks.COPPER_SCAFFOLD.get());
+				AllBlocks.COPPER_CASING.get(), AllBlocks.COPPER_SCAFFOLD.get(), AllBlocks.FLUID_TANK.get());
 			//endregion
 			for (Block block : connectsToCopperRoof) {
-				tag(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS.tag).add(block);
-				tag(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_COPPER.tag).add(block);
+				tag(DriftBlockTags.ROOFS_CONNECT_TO.tag).add(block);
+				tag(DriftBlockTags.ROOFS_CONNECT_TO_COPPER.tag).add(block);
 			}
 			
 			//region Shadoline lesser hell
@@ -131,11 +141,19 @@ public class DriftTagProvider {
 				EnderscapeBlocks.CUT_SHADOLINE_STAIRS.get(), EnderscapeBlocks.CHISELED_SHADOLINE.get());
 			//endregion
 			for (Block block : connectsToShadolineRoof) {
-				tag(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS.tag).add(block);
-				tag(DriftBlockTags.CONNECTS_TO_ROOF_BLOCKS_SHADOLINE.tag).add(block);
+				tag(DriftBlockTags.ROOFS_CONNECT_TO.tag).add(block);
+				tag(DriftBlockTags.ROOFS_CONNECT_TO_SHADOLINE.tag).add(block);
 			}
 			
-			tag(DriftBlockTags.ROOF_BLOCKS.tag).add(DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get());
+			tag(DriftBlockTags.ROOF_BLOCKS.tag).add(
+				DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+			tag(DriftBlockTags.ROOF_BLOCKS_SHADOLINE.tag).add(
+					DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+			    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+			    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+			
 			CopperBlockSet shingles = AllBlocks.COPPER_SHINGLES;
 		    for (CopperBlockSet.Variant<?> variant : shingles.getVariants()) {
 		        for (boolean waxed : new boolean[]{false, true}) {

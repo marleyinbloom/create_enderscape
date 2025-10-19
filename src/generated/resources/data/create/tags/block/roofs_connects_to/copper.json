@@ -65,6 +65,7 @@
     "minecraft:waxed_weathered_cut_copper_stairs",
     "minecraft:waxed_oxidized_cut_copper_stairs",
     "create:copper_casing",
-    "create:copper_scaffolding"
+    "create:copper_scaffolding",
+    "create:fluid_tank"
   ]
 }

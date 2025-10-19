@@ -2,6 +2,7 @@ package garden.inbloom.create_enderscape.datagen;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale.Category;
 import java.util.concurrent.CompletableFuture;
 
 import javax.annotation.Nullable;
@@ -95,9 +96,20 @@ public class DriftRecipeProvider extends RecipeProvider {
         nineBlockStorageRecipesFromTags(output, RecipeCategory.MISC, DriftItems.SHADOLINE_NUGGET.get(), DriftItemTags.NUGGETS_SHADOLINE.tag, 
         		RecipeCategory.MISC, EnderscapeItems.SHADOLINE_INGOT.get(), DriftItemTags.INGOTS_SHADOLINE.tag);
         
+        stairBuilder(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS, Ingredient.of(DriftBlocksDeco.SHADOLINE_SHINGLES))
+    	.unlockedBy("has_shadoline_shingles", has(DriftBlocksDeco.SHADOLINE_SHINGLES)).save(output);;
+        slab(output, RecipeCategory.BUILDING_BLOCKS, DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB, DriftBlocksDeco.SHADOLINE_SHINGLES);
+        
+        stairBuilder(DriftBlocksDeco.SHADOLINE_TILE_STAIRS, Ingredient.of(DriftBlocksDeco.SHADOLINE_TILES))
+        	.unlockedBy("has_shadoline_tiles", has(DriftBlocksDeco.SHADOLINE_TILES)).save(output);
+        slab(output, RecipeCategory.BUILDING_BLOCKS, DriftBlocksDeco.SHADOLINE_TILE_SLAB, DriftBlocksDeco.SHADOLINE_TILES);
+        
         createWindowBlock(output, DriftBlocksDeco.CELESTIAL_WINDOW.get(), EnderscapeBlocks.CELESTIAL_PLANKS.get());
+        stainedGlassPaneFromStainedGlass(output, DriftBlocksDeco.CELESTIAL_WINDOW_PANE.get(), DriftBlocksDeco.CELESTIAL_WINDOW.get());
         createWindowBlock(output, DriftBlocksDeco.MURUBLIGHT_WINDOW.get(), EnderscapeBlocks.MURUBLIGHT_PLANKS.get());
+        stainedGlassPaneFromStainedGlass(output, DriftBlocksDeco.MURUBLIGHT_WINDOW_PANE.get(), DriftBlocksDeco.MURUBLIGHT_WINDOW.get());
         createWindowBlock(output, DriftBlocksDeco.VEILED_WINDOW.get(), EnderscapeBlocks.VEILED_PLANKS.get());
+        stainedGlassPaneFromStainedGlass(output, DriftBlocksDeco.VEILED_WINDOW_PANE.get(), DriftBlocksDeco.VEILED_WINDOW.get());
         
         cut(output, RecipeCategory.MISC, EnderscapeBlocks.DUSK_PURPUR_BLOCK.get(), DriftItemTags.INGOTS_DUSK.tag);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, EnderscapeBlocks.PURPUR_TILES.get(), 4)

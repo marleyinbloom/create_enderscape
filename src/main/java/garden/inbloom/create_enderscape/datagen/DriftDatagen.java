@@ -1,9 +1,5 @@
 package garden.inbloom.create_enderscape.datagen;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
 import garden.inbloom.create_enderscape.Drift;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -14,6 +10,10 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
 public class DriftDatagen {
 	public static void gatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
@@ -21,15 +21,14 @@ public class DriftDatagen {
 		ExistingFileHelper existFile = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookup = event.getLookupProvider();
 		String modid = Drift.ID;
-		DriftTagProvider tagProvider = new DriftTagProvider();
-		BlockTagsProvider blockTagProvider = tagProvider.new DriftBlockTagProvider(output, lookup, modid, existFile);
+		BlockTagsProvider blockTagProvider = new DriftTagProvider.DriftBlockTagProvider(output, lookup, modid, existFile);
 		
 		generator.addProvider(event.includeServer(), new LootTableProvider(output, Collections.emptySet(), 
 			List.of(new LootTableProvider.SubProviderEntry(DriftBlockLootTableProvider::new, LootContextParamSets.BLOCK)),
 			lookup));
 		generator.addProvider(event.includeServer(), blockTagProvider);
-		generator.addProvider(event.includeServer(), tagProvider.new DriftItemTagProvider(output, lookup, 
-				blockTagProvider.contentsGetter(), modid, existFile));
+		generator.addProvider(event.includeServer(), new DriftTagProvider.DriftItemTagProvider(output, lookup,
+                blockTagProvider.contentsGetter(), modid, existFile));
 		generator.addProvider(event.includeServer(), new DriftRecipeProvider(output, lookup));
 		generator.addProvider(event.includeServer(), new DriftAdvancementProvider(output, lookup, existFile));
 		

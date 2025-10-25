@@ -20,6 +20,11 @@ public class DriftBlockLootTableProvider extends BlockLootSubProvider {
 	protected void generate() {
 		dropSelf(DriftBlocks.DUSK_CASING.get());
 		
+		dropSelf(DriftBlocks.ALLURING_MAGNIA_COUPLER.get());
+		dropSelf(DriftBlocks.REPULSIVE_MAGNIA_COUPLER.get());
+
+		dropSelf(DriftBlocksDeco.DUSK_SCAFFOLDING.get());
+		
 		dropSelf(DriftBlocksDeco.SHADOLINE_SHINGLES.get());
 		dropSelf(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get());
 		add(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(),

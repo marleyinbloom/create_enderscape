@@ -3,20 +3,23 @@ package garden.inbloom.create_enderscape.datagen;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.foundation.block.CopperBlockSet;
-import com.tterrag.registrate.util.entry.BlockEntry;
 
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
 import garden.inbloom.create_enderscape.register.DriftItems;
 import garden.inbloom.create_enderscape.register.DriftTags.DriftBlockTags;
 import garden.inbloom.create_enderscape.register.DriftTags.DriftItemTags;
+
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.foundation.block.CopperBlockSet;
+import com.tterrag.registrate.util.entry.BlockEntry;
+
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.bunten.enderscape.registry.EnderscapeItems;
 import net.bunten.enderscape.registry.tag.EnderscapeBlockTags;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -28,8 +31,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class DriftTagProvider {
-	
-	public class DriftBlockTagProvider extends BlockTagsProvider {
+	public static class DriftBlockTagProvider extends BlockTagsProvider {
 
 		public DriftBlockTagProvider(PackOutput output, CompletableFuture<Provider> lookupProvider, String modId,
 				@Nullable ExistingFileHelper existingFileHelper) {
@@ -37,7 +39,7 @@ public class DriftTagProvider {
 		}
 
 		@Override
-		protected void addTags(Provider provider) {
+		protected void addTags(@NotNull Provider provider) {
 			roofBlockHell();
 		    
 			commonBlockTags();
@@ -55,8 +57,8 @@ public class DriftTagProvider {
 				EnderscapeBlocks.STRIPPED_CELESTIAL_STEM.get(), EnderscapeBlocks.STRIPPED_MURUBLIGHT_STEM.get(),
 				EnderscapeBlocks.STRIPPED_VEILED_LOG.get());
 			tag(DriftBlockTags.STRIPPED_WOOD.tag).add(
-					EnderscapeBlocks.STRIPPED_CELESTIAL_HYPHAE.get(), EnderscapeBlocks.STRIPPED_MURUBLIGHT_HYPHAE.get(),
-					EnderscapeBlocks.STRIPPED_VEILED_WOOD.get());
+				EnderscapeBlocks.STRIPPED_CELESTIAL_HYPHAE.get(), EnderscapeBlocks.STRIPPED_MURUBLIGHT_HYPHAE.get(),
+				EnderscapeBlocks.STRIPPED_VEILED_WOOD.get());
 		}
 		
 		private void vanillaBlockTags() {
@@ -150,10 +152,10 @@ public class DriftTagProvider {
 		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
 		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
 			tag(DriftBlockTags.ROOF_BLOCKS_SHADOLINE.tag).add(
-					DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-			    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-			    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
-			
+				DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+			    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+			    DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+
 			CopperBlockSet shingles = AllBlocks.COPPER_SHINGLES;
 		    for (CopperBlockSet.Variant<?> variant : shingles.getVariants()) {
 		        for (boolean waxed : new boolean[]{false, true}) {
@@ -166,6 +168,7 @@ public class DriftTagProvider {
 		            }
 		        }
 		    }
+
 			CopperBlockSet tiles = AllBlocks.COPPER_TILES;
 		    for (CopperBlockSet.Variant<?> variant : tiles.getVariants()) {
 		        for (boolean waxed : new boolean[]{false, true}) {
@@ -181,15 +184,14 @@ public class DriftTagProvider {
 		}
 	}
 	
-	public class DriftItemTagProvider extends ItemTagsProvider {
-
+	public static class DriftItemTagProvider extends ItemTagsProvider {
 		public DriftItemTagProvider(PackOutput output, CompletableFuture<Provider> lookupProvider,
 				CompletableFuture<TagLookup<Block>> blockTags, String modid, ExistingFileHelper existingFileHelper) {
 			super(output, lookupProvider, blockTags, modid, existingFileHelper);
 		}
 
 		@Override
-		protected void addTags(Provider provider) {
+		protected void addTags(@NotNull Provider provider) {
 			commonItemTags();
 		}
 		

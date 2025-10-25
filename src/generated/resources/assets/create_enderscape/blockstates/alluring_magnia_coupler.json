@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "create_enderscape:block/alluring_magnia_coupler"
+    },
+    "powered=true": {
+      "model": "create_enderscape:block/alluring_magnia_coupler_powered"
+    }
+  }
+}

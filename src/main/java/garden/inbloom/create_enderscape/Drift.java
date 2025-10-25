@@ -1,11 +1,6 @@
 package garden.inbloom.create_enderscape;
 
-import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.foundation.data.CreateRegistrate;
-
 import garden.inbloom.create_enderscape.datagen.DriftDatagen;
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftCreativeTabs;
@@ -19,13 +14,13 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Drift.ID)
 public class Drift {
     public static final String ID = "create_enderscape";
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(ID);
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -45,20 +40,16 @@ public class Drift {
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        
-        
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
     }
-
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
     }
 
-    
     public static ResourceLocation asResource(String path) {
 		return ResourceLocation.fromNamespaceAndPath(ID, path);
 	} 

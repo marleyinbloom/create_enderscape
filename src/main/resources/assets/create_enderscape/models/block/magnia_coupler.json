@@ -7,7 +7,8 @@
 		"axis_top": "create:block/axis_top",
 		"casing": "create:block/andesite_casing_short",
 		"gearbox": "create:block/gearbox",
-		"magnia": "enderscape:block/alluring_magnia_sprout_powered"
+		"magnia": "enderscape:block/alluring_magnia_sprout_powered",
+		"particle": "create:block/andesite_casing"
 	},
 	"elements": [
 		{
@@ -80,22 +81,32 @@
 			}
 		},
 		{
-			"from": [0, 10, 8],
-			"to": [16, 19, 8],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"from": [0.8, 10, 8],
+			"to": [15.2, 19, 8],
+			"shade": false,
+			"ambientocclusion": false,
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
 				"north": {"uv": [0, 3, 16, 12], "texture": "#magnia"},
 				"south": {"uv": [0, 3, 16, 12], "texture": "#magnia"}
-			}
+			},
+		    "neoforge_data": {
+		        "ambient_occlusion": false
+		    }
 		},
 		{
-			"from": [0, 10, 8],
-			"to": [16, 19, 8],
-			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"from": [0.8, 10, 8],
+			"to": [15.2, 19, 8],
+			"shade": false,
+			"ambientocclusion": false,
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8], "rescale": true},
 			"faces": {
 				"north": {"uv": [0, 3, 16, 12], "texture": "#magnia"},
 				"south": {"uv": [0, 3, 16, 12], "texture": "#magnia"}
-			}
+			},
+		    "neoforge_data": {
+		        "ambient_occlusion": false
+		    }
 		}
 	],
 	"display": {

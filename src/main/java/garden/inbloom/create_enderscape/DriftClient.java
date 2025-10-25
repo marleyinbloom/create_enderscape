@@ -17,8 +17,6 @@ import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 @EventBusSubscriber(modid = Drift.ID, value = Dist.CLIENT)
 public class DriftClient {
     public DriftClient(ModContainer container) {
-        // i ran a function here and it didnt work
-
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
     }
 

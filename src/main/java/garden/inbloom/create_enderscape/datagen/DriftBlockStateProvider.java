@@ -1,10 +1,11 @@
 package garden.inbloom.create_enderscape.datagen;
 
 import com.simibubi.create.content.decoration.palettes.ConnectedGlassPaneBlock;
-
 import garden.inbloom.create_enderscape.Drift;
+import garden.inbloom.create_enderscape.block.MagniaCouplerBlock;
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
+import net.bunten.enderscape.Enderscape;
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.data.PackOutput;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TransparentBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -44,7 +46,34 @@ public class DriftBlockStateProvider extends BlockStateProvider {
 		windowBlockWithItem(DriftBlocksDeco.VEILED_WINDOW, EnderscapeBlocks.VEILED_WOOD_TYPE);
 		windowPaneWithItem(DriftBlocksDeco.VEILED_WINDOW_PANE, blockTexture(DriftBlocksDeco.VEILED_WINDOW.get()), 
 			EnderscapeBlocks.VEILED_WOOD_TYPE);
+		
+		magniaCoupler(DriftBlocks.ALLURING_MAGNIA_COUPLER.get());
+		magniaCoupler(DriftBlocks.REPULSIVE_MAGNIA_COUPLER.get());
 	}
+
+    @SuppressWarnings("AccessStaticViaInstance")
+    private void magniaCoupler(MagniaCouplerBlock block) {
+    	String magniaName = block.magniaType.getSerializedName();
+        getVariantBuilder(block).forAllStates(state -> {
+            if(state.getValue(block.POWERED)) {
+                return new ConfiguredModel[]{
+                	new ConfiguredModel(models().withExistingParent(magniaName + "_magnia_coupler_powered",
+                        Drift.asResource("block/magnia_coupler"))
+                			.texture("magnia", Enderscape.id("block/" + magniaName + "_magnia_sprout")))
+                	};
+            } else {
+                return new ConfiguredModel[]{
+                	new ConfiguredModel(models().withExistingParent(magniaName + "_magnia_coupler",
+                        Drift.asResource("block/magnia_coupler"))
+                			.texture("magnia", Enderscape.id("block/" + magniaName + "_magnia_sprout_powered")))
+                	};
+            }
+        });
+
+        simpleBlockItem(block, models().withExistingParent(magniaName + "_magnia_coupler",
+            Drift.asResource("block/magnia_coupler"))
+    			.texture("magnia", Enderscape.id("block/" + magniaName + "_magnia_sprout_powered")));
+    }
 
 	private void cubeBlockWithItem(DeferredBlock<?> block) {
 		simpleBlockWithItem(block.get(), cubeAll(block.get()));

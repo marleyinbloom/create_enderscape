@@ -29,6 +29,8 @@ public class DriftLanguageProvider extends LanguageProvider {
 	
 	private void blockTranslations() {
 		addBlock(DriftBlocks.DUSK_CASING, "Dusk Casing");
+		addBlock(DriftBlocks.ALLURING_MAGNIA_COUPLER, "Alluring Magnia Coupler");
+		addBlock(DriftBlocks.REPULSIVE_MAGNIA_COUPLER, "Repulsive Magnia Coupler");
 
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLES, "Shadoline Shingles");
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS, "Shadoline Shingle Stairs");
@@ -57,7 +59,22 @@ public class DriftLanguageProvider extends LanguageProvider {
 	private void advancementTranslations() {
 		addAdvancement("cracked_mirror", 
 			"Chaotic Evil",
-			"\"I am NOT going to put the mirror here.\"");
+			"\"I am NOT going to put the mirror here.\"\n§7(Hidden Advancement)");
+		addAdvancement("dusk_ingot", 
+			"Poppin' Alloys", 
+			"Obtain some Dusk Ingots, made with materials found beyond The End.");
+		addAdvancement("dusk_casing", 
+			"The Dusk Age", 
+			"Apply Dusk Ingots to stripped wood, creating a mysterious casing for your machines.");
+		addAdvancement("magnia_coupler", 
+			"Magnetic Shafts", 
+			"Use two Magnia Couplers to send torque over a distance.");
+		addAdvancement("nebula_amplifier", 
+			"Purpurtual Motion Machine", 
+			"Use a Nebula Amplifier with Nebulite fuel to multiply your stress capacity.");
+		addAdvancement("nebula_amplifier_break", 
+			"Conservation of Energy", 
+			"Be disappointed after attempting to connect a Nebula Amplifier to itself.\n§7(Hidden Advancement)");
 	}
 	
 	private void addAdvancement(String id, String title, String desc) {

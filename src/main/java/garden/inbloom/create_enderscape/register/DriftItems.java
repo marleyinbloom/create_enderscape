@@ -1,12 +1,14 @@
 package garden.inbloom.create_enderscape.register;
 
 import com.google.common.base.Supplier;
-
 import garden.inbloom.create_enderscape.Drift;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ItemLike;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.List;
 
 public class DriftItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Drift.ID);
@@ -19,11 +21,13 @@ public class DriftItems {
     
     //region Registration methods
 	protected static DeferredItem<Item> registerItem(String name) {
-    	return registerItem(name, () -> new Item(new Item.Properties()));
+    	return registerItem(name, () -> new Item(new Item.Properties()), DriftCreativeTabs.MAIN_ITEMS);
     }
-    
-	protected static <T extends Item> DeferredItem<T> registerItem(String name, Supplier<T> item) {
-    	return ITEMS.register(name, item);
+
+    protected static <T extends Item> DeferredItem<T> registerItem(String name, Supplier<T> item, List<ItemLike> creativeList) {
+		DeferredItem<T> newItem = ITEMS.register(name, item);
+		creativeList.add(newItem);
+    	return newItem;
     }
     //endregion
 

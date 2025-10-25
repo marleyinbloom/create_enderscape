@@ -19,20 +19,24 @@ version = mod_version
 group = mod_group_id
 
 repositories {
+    mavenCentral()
     // Create
     maven { url = "https://maven.createmod.net" } // Create, Ponder, Flywheel
     maven { url = "https://maven.ithundxr.dev/snapshots" } // Registrate
     // Enderscape
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = "Modrinth"
-                url = "https://api.modrinth.com/maven"
-            }
-        }
-        filter {
-            includeGroup "maven.modrinth"
-        }
+    maven {url = "https://jitpack.io"}
+    maven {
+        name 'Xander Maven'
+        url 'https://maven.isxander.dev/releases'
+    }
+    maven {
+        name = 'Kotlin for Forge'
+        url = 'https://thedarkcolour.github.io/KotlinForForge/'
+        content { includeGroup "thedarkcolour" }
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
     }
 }
 
@@ -136,9 +140,9 @@ dependencies {
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
     
     // Enderscape
-    implementation("maven.modrinth:enderscape:K3Vz3uXn")
-    implementation("maven.modrinth:trimmed:1.21-3.0.0+neoforge")
-    implementation("maven.modrinth:yacl:3.8.0+1.21.1-neoforge")
+    implementation("maven.modrinth:trimmed:1.21.3-4.0.0+neoforge")
+    implementation("dev.isxander:yet-another-config-lib:${project.yacl_version}")
+    implementation("com.github.they-made-enderscape:enderscape:neoforge-1.21.1-SNAPSHOT")
     
     // Not Needed
     runtimeOnly("maven.modrinth:jei:DFIjSzbJ")

@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 import com.simibubi.create.Create;
 
 import garden.inbloom.create_enderscape.Drift;
+import garden.inbloom.create_enderscape.register.DriftItems;
 import net.bunten.enderscape.registry.EnderscapeItems;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
@@ -30,19 +31,30 @@ public class DriftAdvancementProvider extends AdvancementProvider {
 	private static final class Generator implements AdvancementGenerator {
 		@SuppressWarnings("unused")
 		@Override
-		public void generate(Provider registries, Consumer<AdvancementHolder> saver,
-				ExistingFileHelper existingFileHelper) {
-			Advancement.Builder builder = Advancement.Builder.advancement();
+		public void generate(Provider registries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
 			
-			builder.parent(AdvancementSubProvider.createPlaceholder(Create.asResource("mechanical_press").toString()));
-			builder.display(EnderscapeItems.CRACKED_MIRROR.get(),
+			AdvancementHolder CRACKED_MIRROR = Advancement.Builder.advancement()
+			.parent(AdvancementSubProvider.createPlaceholder(Create.asResource("mechanical_press").toString()))
+			.display(EnderscapeItems.CRACKED_MIRROR.get(),
 				Component.translatable("advancement." + Drift.ID + ".cracked_mirror.title"),
 				Component.translatable("advancement." + Drift.ID + ".cracked_mirror.desc"),
-				null, AdvancementType.GOAL, true, true, true);
-			builder.addCriterion("has_cracked_mirror", 
-				InventoryChangeTrigger.TriggerInstance.hasItems(EnderscapeItems.CRACKED_MIRROR.get()));
-			builder.requirements(AdvancementRequirements.allOf(List.of("has_cracked_mirror")));
-			AdvancementHolder CRACKED_MIRROR = builder.save(saver, Drift.asResource("cracked_mirror"), existingFileHelper);
+				null, AdvancementType.GOAL, true, true, true)
+			.addCriterion("has_cracked_mirror", 
+				InventoryChangeTrigger.TriggerInstance.hasItems(EnderscapeItems.CRACKED_MIRROR.get()))
+			.requirements(AdvancementRequirements.allOf(List.of("has_cracked_mirror")))
+			.save(saver, Drift.asResource("cracked_mirror"), existingFileHelper);
+
+			AdvancementHolder DUSK_INGOT = Advancement.Builder.advancement()
+			.parent(AdvancementSubProvider.createPlaceholder(Create.asResource("brass").toString()))
+			.display(DriftItems.DUSK_INGOT.get(),
+					Component.translatable("advancement." + Drift.ID + ".dusk_ingot.title"),
+					Component.translatable("advancement." + Drift.ID + ".dusk_ingot.desc"),
+					null, AdvancementType.TASK, false, true, false)
+			.addCriterion("has_dusk_ingot", 
+				InventoryChangeTrigger.TriggerInstance.hasItems(DriftItems.DUSK_INGOT.get()))
+			.requirements(AdvancementRequirements.allOf(List.of("has_dusk_ingot")))
+			.save(saver, Drift.asResource("dusk_ingot"), existingFileHelper);
+			
 		}	
 	}
 }

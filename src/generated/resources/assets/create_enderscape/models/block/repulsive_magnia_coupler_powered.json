@@ -1,0 +1,6 @@
+{
+  "parent": "create_enderscape:block/magnia_coupler",
+  "textures": {
+    "magnia": "enderscape:block/repulsive_magnia_sprout"
+  }
+}

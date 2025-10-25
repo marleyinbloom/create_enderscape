@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "R": {
+      "item": "enderscape:repulsive_magnia_sprout"
+    },
+    "S": {
+      "item": "create:shaft"
+    }
+  },
+  "pattern": [
+    "R",
+    "C",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "create_enderscape:repulsive_magnia_coupler"
+  }
+}

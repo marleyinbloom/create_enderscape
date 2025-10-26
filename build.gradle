@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 
 plugins {
     id 'java-library'
@@ -140,13 +141,15 @@ dependencies {
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
     
     // Enderscape
-    implementation("maven.modrinth:trimmed:1.21.3-4.0.0+neoforge")
+    implementation("maven.modrinth:trimmed:1.21-${trimmed_version}+neoforge")
     implementation("dev.isxander:yet-another-config-lib:${project.yacl_version}")
     implementation("com.github.they-made-enderscape:enderscape:neoforge-1.21.1-SNAPSHOT")
     
     // Not Needed
     runtimeOnly("maven.modrinth:jei:DFIjSzbJ")
     runtimeOnly("maven.modrinth:jade:15.10.3+neoforge")
+    //runtimeOnly("maven.modrinth:mouse-tweaks:1.21-2.26.1-neoforge")
+    runtimeOnly("maven.modrinth:better-advancements:FjTYILOi")
     
 }
 

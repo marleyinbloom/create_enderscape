@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "create_enderscape:block/dusk_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "create_enderscape:block/dusk_ladder"
+    },
+    "facing=south": {
+      "model": "create_enderscape:block/dusk_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "create_enderscape:block/dusk_ladder",
+      "y": 270
+    }
+  }
+}

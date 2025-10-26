@@ -1,0 +1,11 @@
+{
+  "parent": "create:block/scaffold/block_horizontal",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "casing": "create_enderscape:block/dusk_casing",
+    "inside": "create_enderscape:block/scaffold/dusk_scaffold_inside",
+    "particle": "create_enderscape:block/scaffold/dusk_scaffold",
+    "side": "create_enderscape:block/scaffold/dusk_scaffold",
+    "top": "create_enderscape:block/funnel/dusk_funnel_frame"
+  }
+}

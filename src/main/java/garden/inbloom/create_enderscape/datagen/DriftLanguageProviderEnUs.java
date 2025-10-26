@@ -7,9 +7,9 @@ import garden.inbloom.create_enderscape.register.DriftItems;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
-public class DriftLanguageProvider extends LanguageProvider {
+public class DriftLanguageProviderEnUs extends LanguageProvider {
 
-	public DriftLanguageProvider(PackOutput output, String modid) {
+	public DriftLanguageProviderEnUs(PackOutput output, String modid) {
 		super(output, modid, "en_us");
 	}
 
@@ -32,6 +32,9 @@ public class DriftLanguageProvider extends LanguageProvider {
 		addBlock(DriftBlocks.ALLURING_MAGNIA_COUPLER, "Alluring Magnia Coupler");
 		addBlock(DriftBlocks.REPULSIVE_MAGNIA_COUPLER, "Repulsive Magnia Coupler");
 
+        addBlock(DriftBlocksDeco.DUSK_LADDER, "Dusk Ladder");
+        addBlock(DriftBlocksDeco.DUSK_BARS, "Dusk Bars");
+        addBlock(DriftBlocksDeco.DUSK_SCAFFOLDING, "Dusk Scaffolding");
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLES, "Shadoline Shingles");
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS, "Shadoline Shingle Stairs");
 		addBlock(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB, "Shadoline Shingle Slab");
@@ -57,24 +60,25 @@ public class DriftLanguageProvider extends LanguageProvider {
 	}
 	
 	private void advancementTranslations() {
+        String secret = "\n§7(Hidden Advancement)";
 		addAdvancement("cracked_mirror", 
 			"Chaotic Evil",
-			"\"I am NOT going to put the mirror here.\"\n§7(Hidden Advancement)");
+			"\"I am NOT going to put the mirror here.\"" + secret);
 		addAdvancement("dusk_ingot", 
 			"Poppin' Alloys", 
-			"Obtain some Dusk Ingots, made with materials found beyond The End.");
+			"Obtain some Dusk Ingots, made with materials found beyond The End");
 		addAdvancement("dusk_casing", 
 			"The Dusk Age", 
-			"Apply Dusk Ingots to stripped wood, creating a mysterious casing for your machines.");
+			"Apply Dusk Ingots to stripped wood, creating a mysterious casing for your machines");
 		addAdvancement("magnia_coupler", 
 			"Magnetic Shafts", 
-			"Use two Magnia Couplers to send torque over a distance.");
+			"Use two Magnia Couplers to send torque over a distance");
 		addAdvancement("nebula_amplifier", 
 			"Purpurtual Motion Machine", 
-			"Use a Nebula Amplifier with Nebulite fuel to multiply your stress capacity.");
+			"Use a Nebula Amplifier with Nebulite fuel to multiply your stress capacity");
 		addAdvancement("nebula_amplifier_break", 
 			"Conservation of Energy", 
-			"Be disappointed after attempting to connect a Nebula Amplifier to itself.\n§7(Hidden Advancement)");
+			"Be disappointed after attempting to connect a Nebula Amplifier to itself" + secret);
 	}
 	
 	private void addAdvancement(String id, String title, String desc) {

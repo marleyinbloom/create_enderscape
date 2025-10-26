@@ -4,9 +4,7 @@ import com.simibubi.create.foundation.block.connected.AllCTTypes;
 import com.simibubi.create.foundation.block.connected.CTSpriteShiftEntry;
 import com.simibubi.create.foundation.block.connected.CTSpriteShifter;
 import com.simibubi.create.foundation.block.connected.CTType;
-
 import garden.inbloom.create_enderscape.Drift;
-import net.neoforged.bus.api.IEventBus;
 
 public class DriftSpriteShifts {
 	public static final CTSpriteShiftEntry DUSK_CASING = omni("dusk_casing");
@@ -17,9 +15,9 @@ public class DriftSpriteShifts {
 	public static final CTSpriteShiftEntry SHADOLINE_SHINGLES = roof("shadoline_roof_top", "shadoline_shingles_top"),
 		SHADOLINE_TILES = roof("shadoline_roof_top", "shadoline_tiles_top");
 
-	public static final CTSpriteShiftEntry CELESTIAL_WINDOW = vertical("windows/celestial_window"),
-		MURUBLIGHT_WINDOW = vertical("windows/murublight_window"),
-		VEILED_WINDOW = vertical("windows/veiled_window");
+	public static final CTSpriteShiftEntry CELESTIAL_WINDOW = vertical("window/celestial_window"),
+		MURUBLIGHT_WINDOW = vertical("window/murublight_window"),
+		VEILED_WINDOW = vertical("window/veiled_window");
 
 	private static CTSpriteShiftEntry omni(String name) {
 		return getCT(AllCTTypes.OMNIDIRECTIONAL, name);
@@ -51,5 +49,5 @@ public class DriftSpriteShifts {
 		Drift.LOGGER.info("Registered SpriteShifts!");
 	}
 
-	public static void register(IEventBus eventBus) {}
+	public static void register() {}
 }

@@ -2,6 +2,7 @@ package garden.inbloom.create_enderscape.register;
 
 import com.google.common.base.Supplier;
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.decoration.MetalScaffoldingBlockItem;
 import com.simibubi.create.content.decoration.encasing.CasingBlock;
 import garden.inbloom.create_enderscape.Drift;
 import garden.inbloom.create_enderscape.block.MagniaCouplerBlock;
@@ -40,18 +41,14 @@ public class DriftBlocks {
 	//endregion
 
 	//region Registration methods
-	protected static <T extends Block> DeferredBlock<T> registerDecoBlock(String name, Supplier<T> block) {
-        return registerDecoBlock(name, block, true);
-    }
-	
 	protected static <T extends Block> DeferredBlock<T> registerDecoBlock(String name, Supplier<T> block, Boolean andItem) {
-        return registerBlock(name, block, andItem, DriftCreativeTabs.MAIN_BLOCKS);
+        return registerBlock(name, block, andItem, DriftCreativeTabs.DECO_BLOCKS);
     }
 	
 	protected static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         return registerBlock(name, block, true);
     }
-	
+
 	protected static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block, Boolean andItem) {
         return registerBlock(name, block, andItem, DriftCreativeTabs.MAIN_BLOCKS);
     }
@@ -65,6 +62,16 @@ public class DriftBlocks {
 
 	protected static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block, List<ItemLike> creativeList) {
         DriftItems.registerItem(name, () -> new BlockItem(block.get(), new Item.Properties()), creativeList);
+    }
+
+    protected static <T extends Block> DeferredBlock<T> registerMetalScaffold(String name, Supplier<T> block) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        registerMetalScaffoldItem(name, toReturn, DriftCreativeTabs.DECO_BLOCKS);
+        return toReturn;
+    }
+
+    protected static <T extends Block> void registerMetalScaffoldItem(String name, DeferredBlock<T> block, List<ItemLike> creativeList) {
+        DriftItems.registerItem(name, () -> new MetalScaffoldingBlockItem(block.get(), new Item.Properties()), creativeList);
     }
 	//endregion
     

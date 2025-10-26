@@ -1,25 +1,16 @@
 package garden.inbloom.create_enderscape.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.foundation.block.CopperBlockSet;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
 import garden.inbloom.create_enderscape.register.DriftItems;
 import garden.inbloom.create_enderscape.register.DriftTags.DriftBlockTags;
 import garden.inbloom.create_enderscape.register.DriftTags.DriftItemTags;
-
-import com.simibubi.create.AllBlocks;
-import com.simibubi.create.foundation.block.CopperBlockSet;
-import com.tterrag.registrate.util.entry.BlockEntry;
-
 import net.bunten.enderscape.registry.EnderscapeBlocks;
 import net.bunten.enderscape.registry.EnderscapeItems;
 import net.bunten.enderscape.registry.tag.EnderscapeBlockTags;
-
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -29,6 +20,11 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class DriftTagProvider {
 	public static class DriftBlockTagProvider extends BlockTagsProvider {
@@ -63,29 +59,41 @@ public class DriftTagProvider {
 		
 		private void vanillaBlockTags() {
 		    tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-		    	DriftBlocks.DUSK_CASING.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+                    DriftBlocks.DUSK_CASING.get(),
+                    DriftBlocksDeco.DUSK_LADDER.get(), DriftBlocksDeco.DUSK_BARS.get(),
+                    DriftBlocksDeco.DUSK_SCAFFOLDING.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get()
+            );
 		    tag(BlockTags.MINEABLE_WITH_AXE).add(
-		    	DriftBlocks.DUSK_CASING.get());
+                    DriftBlocks.DUSK_CASING.get()
+            );
 		    tag(BlockTags.INCORRECT_FOR_WOODEN_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+                    DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get()
+            );
 		    tag(BlockTags.INCORRECT_FOR_GOLD_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+                    DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get()
+            );
 		    tag(BlockTags.NEEDS_STONE_TOOL).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+                    DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+                    DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get()
+            );
 		    
 		    tag(BlockTags.DRAGON_IMMUNE).add(
-		    	DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
-		    	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get());
+		    	    DriftBlocksDeco.SHADOLINE_SHINGLES.get(), DriftBlocksDeco.SHADOLINE_TILES.get(),
+		    	    DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), DriftBlocksDeco.SHADOLINE_TILE_SLAB.get(),
+		        	DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), DriftBlocksDeco.SHADOLINE_TILE_STAIRS.get()
+            );
+
+            tag(BlockTags.CLIMBABLE).add(
+                    DriftBlocksDeco.DUSK_LADDER.get(), DriftBlocksDeco.DUSK_SCAFFOLDING.get()
+            );
 		}
 		
 		private void enderscapeBlockTags() {

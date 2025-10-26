@@ -1,6 +1,9 @@
 {
   "values": [
     "create_enderscape:dusk_casing",
+    "create_enderscape:dusk_ladder",
+    "create_enderscape:dusk_bars",
+    "create_enderscape:dusk_scaffolding",
     "create_enderscape:shadoline_shingles",
     "create_enderscape:shadoline_tiles",
     "create_enderscape:shadoline_shingle_slab",

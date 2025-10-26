@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "create_enderscape:block/windows/murublight_window"
+    "layer0": "create_enderscape:block/window/murublight_window"
   }
 }

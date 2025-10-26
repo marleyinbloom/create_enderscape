@@ -35,7 +35,7 @@ public class DriftDatagen {
 		if (event.includeServer())
 			DriftRecipeProvider.registerAllProcessing(generator, output, lookup, modid);
 
-		generator.addProvider(event.includeClient(), new DriftLanguageProvider(output, modid));
+		generator.addProvider(event.includeClient(), new DriftLanguageProviderEnUs(output, modid));
 		generator.addProvider(event.includeClient(), new DriftItemModelProvider(output, modid, existFile));
 		generator.addProvider(event.includeClient(), new DriftBlockStateProvider(output, modid, existFile));
 	}

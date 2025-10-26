@@ -1,27 +1,33 @@
 package garden.inbloom.create_enderscape.block.connected;
 
-import java.util.function.BiConsumer;
-import java.util.function.Supplier;
-
 import com.simibubi.create.CreateClient;
+import com.simibubi.create.content.decoration.MetalScaffoldingCTBehaviour;
 import com.simibubi.create.content.decoration.encasing.CasingConnectivity;
 import com.simibubi.create.content.decoration.encasing.EncasedCTBehaviour;
 import com.simibubi.create.foundation.block.connected.CTModel;
 import com.simibubi.create.foundation.block.connected.ConnectedTextureBehaviour;
 import com.simibubi.create.foundation.block.connected.HorizontalCTBehaviour;
-
 import garden.inbloom.create_enderscape.block.connected.behaviors.ShadolineRoofCTBehavior;
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
 import net.createmod.catnip.registry.RegisteredObjectsHelper;
 import net.minecraft.world.level.block.Block;
 
+import java.util.function.BiConsumer;
+import java.util.function.Supplier;
+
 public class DriftCTBlockRegistry {
 	public static void register() {
 		registerCTBehviour(DriftBlocks.DUSK_CASING.get(), () -> new EncasedCTBehaviour(DriftSpriteShifts.DUSK_CASING));
 		registerCasingConnectivity(DriftBlocks.DUSK_CASING.get(), (block, T) ->
-			CreateClient.CASING_CONNECTIVITY.makeCasing(block, DriftSpriteShifts.DUSK_CASING));
+                CreateClient.CASING_CONNECTIVITY.makeCasing(block, DriftSpriteShifts.DUSK_CASING)
+        );
 
+        registerCTBehviour(DriftBlocksDeco.DUSK_SCAFFOLDING.get(), () ->
+                new MetalScaffoldingCTBehaviour(DriftSpriteShifts.DUSK_SCAFFOLD, DriftSpriteShifts.DUSK_SCAFFOLD_INSIDE,
+                        DriftSpriteShifts.DUSK_CASING
+                )
+        );
 		registerCTBehviour(DriftBlocksDeco.SHADOLINE_SHINGLES.get(), () -> new ShadolineRoofCTBehavior(DriftSpriteShifts.SHADOLINE_SHINGLES));
 		registerCTBehviour(DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS.get(), () -> new ShadolineRoofCTBehavior(DriftSpriteShifts.SHADOLINE_SHINGLES));
 		registerCTBehviour(DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB.get(), () -> new ShadolineRoofCTBehavior(DriftSpriteShifts.SHADOLINE_SHINGLES));

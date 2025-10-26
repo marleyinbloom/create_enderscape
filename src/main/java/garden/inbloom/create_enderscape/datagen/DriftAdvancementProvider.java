@@ -1,11 +1,6 @@
 package garden.inbloom.create_enderscape.datagen;
 
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
-
 import com.simibubi.create.Create;
-
 import garden.inbloom.create_enderscape.Drift;
 import garden.inbloom.create_enderscape.register.DriftItems;
 import net.bunten.enderscape.registry.EnderscapeItems;
@@ -21,6 +16,10 @@ import net.minecraft.network.chat.Component;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
+
 public class DriftAdvancementProvider extends AdvancementProvider {
 	
 	public DriftAdvancementProvider(PackOutput output, CompletableFuture<Provider> registries,
@@ -32,7 +31,6 @@ public class DriftAdvancementProvider extends AdvancementProvider {
 		@SuppressWarnings("unused")
 		@Override
 		public void generate(Provider registries, Consumer<AdvancementHolder> saver, ExistingFileHelper existingFileHelper) {
-			
 			AdvancementHolder CRACKED_MIRROR = Advancement.Builder.advancement()
 			.parent(AdvancementSubProvider.createPlaceholder(Create.asResource("mechanical_press").toString()))
 			.display(EnderscapeItems.CRACKED_MIRROR.get(),

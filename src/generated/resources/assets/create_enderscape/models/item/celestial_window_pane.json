@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "create_enderscape:block/windows/celestial_window"
+    "layer0": "create_enderscape:block/window/celestial_window"
   }
 }

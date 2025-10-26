@@ -1,7 +1,5 @@
 package garden.inbloom.create_enderscape.datagen;
 
-import java.util.Set;
-
 import garden.inbloom.create_enderscape.Drift;
 import garden.inbloom.create_enderscape.register.DriftBlocks;
 import garden.inbloom.create_enderscape.register.DriftBlocksDeco;
@@ -9,6 +7,8 @@ import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
+
+import java.util.Set;
 
 public class DriftBlockLootTableProvider extends BlockLootSubProvider {
 
@@ -23,6 +23,9 @@ public class DriftBlockLootTableProvider extends BlockLootSubProvider {
 		dropSelf(DriftBlocks.ALLURING_MAGNIA_COUPLER.get());
 		dropSelf(DriftBlocks.REPULSIVE_MAGNIA_COUPLER.get());
 
+
+        dropSelf(DriftBlocksDeco.DUSK_LADDER.get());
+        dropSelf(DriftBlocksDeco.DUSK_BARS.get());
 		dropSelf(DriftBlocksDeco.DUSK_SCAFFOLDING.get());
 		
 		dropSelf(DriftBlocksDeco.SHADOLINE_SHINGLES.get());

@@ -3,6 +3,6 @@
   "render_type": "minecraft:cutout_mipped",
   "textures": {
     "end": "enderscape:block/veiled_planks",
-    "side": "create_enderscape:block/windows/veiled_window"
+    "side": "create_enderscape:block/window/veiled_window"
   }
 }

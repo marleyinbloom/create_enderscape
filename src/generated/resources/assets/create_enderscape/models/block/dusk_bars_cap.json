@@ -1,0 +1,9 @@
+{
+  "parent": "create:block/bars/cap",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "bars": "create_enderscape:block/bars/dusk_bars",
+    "edge": "create_enderscape:block/bars/dusk_bars_edge",
+    "particle": "create_enderscape:block/bars/dusk_bars"
+  }
+}

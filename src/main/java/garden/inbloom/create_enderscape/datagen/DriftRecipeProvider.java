@@ -118,6 +118,9 @@ public class DriftRecipeProvider extends RecipeProvider {
 	private void stonecutterRecipes(RecipeOutput output) {
 		stonecutterResultFromBase(output, DriftBlocksDeco.SHADOLINE_SHINGLES, DriftItemTags.INGOTS_SHADOLINE.tag, 2);
 		stonecutterResultFromBase(output, DriftBlocksDeco.SHADOLINE_TILES, DriftItemTags.INGOTS_SHADOLINE.tag, 2);
+        stonecutterResultFromBase(output, DriftBlocksDeco.DUSK_LADDER, DriftItemTags.INGOTS_DUSK.tag, 2);
+        stonecutterResultFromBase(output, DriftBlocksDeco.DUSK_BARS, DriftItemTags.INGOTS_DUSK.tag, 4);
+        stonecutterResultFromBase(output, DriftBlocksDeco.DUSK_SCAFFOLDING, DriftItemTags.INGOTS_DUSK.tag, 2);
         stonecutterResultFromBase(output, DriftBlocksDeco.SHADOLINE_SHINGLE_STAIRS, DriftBlocksDeco.SHADOLINE_SHINGLES.asItem(), 1);
         stonecutterResultFromBase(output, DriftBlocksDeco.SHADOLINE_SHINGLE_SLAB, DriftBlocksDeco.SHADOLINE_SHINGLES.asItem(), 2);
         stonecutterResultFromBase(output, DriftBlocksDeco.SHADOLINE_TILE_STAIRS, DriftBlocksDeco.SHADOLINE_TILES.asItem(), 1);

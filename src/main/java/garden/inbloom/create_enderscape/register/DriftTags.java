@@ -1,13 +1,6 @@
 package garden.inbloom.create_enderscape.register;
 
-import static garden.inbloom.create_enderscape.register.DriftTags.NameSpace.COMMON;
-import static garden.inbloom.create_enderscape.register.DriftTags.NameSpace.CREATE;
-import static garden.inbloom.create_enderscape.register.DriftTags.NameSpace.MOD;
-
-import javax.annotation.Nullable;
-
 import com.simibubi.create.Create;
-
 import garden.inbloom.create_enderscape.Drift;
 import net.bunten.enderscape.Enderscape;
 import net.createmod.catnip.lang.Lang;
@@ -22,6 +15,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 
+import javax.annotation.Nullable;
+
+import static garden.inbloom.create_enderscape.register.DriftTags.NameSpace.*;
+
+@SuppressWarnings("ALL")
 public class DriftTags {
 	public enum NameSpace {
 		MOD(Drift.ID),
@@ -44,7 +42,7 @@ public class DriftTags {
 			return this.id(pathOverride != null ? pathOverride : Lang.asId(entry.name()));
 		}
 	}
-	
+
 	public enum DriftBlockTags {
 		ROOFS_CONNECT_TO(CREATE, "roofs_connects_to"),
 		ROOFS_CONNECT_TO_COPPER(CREATE, "roofs_connects_to/copper"),
@@ -60,7 +58,6 @@ public class DriftTags {
 		STORAGE_BLOCKS_RAW_SHADOLINE(COMMON, "storage_blocks/raw_shadoline"),
 		STRIPPED_LOGS(COMMON, "stripped_logs"),
 		STRIPPED_WOOD(COMMON, "stripped_woods"),
-		
 		GLASS_BLOCKS_COLORLESS(COMMON, "glass_blocks/colorless"),
 		;
 		
